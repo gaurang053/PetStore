@@ -1,0 +1,4 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Login","Unauthorized Login","FAILURE","2021-02-08T19:02:32.249+01:00[Europe/Berlin]","0.0","8.03"
+"Login","Successful Login and Logout","SUCCESS","2021-02-08T19:02:40.28+01:00[Europe/Berlin]","0.0","1.71"
+"Login","Create and Update user","SUCCESS","2021-02-08T19:02:41.991+01:00[Europe/Berlin]","0.0","5.52"

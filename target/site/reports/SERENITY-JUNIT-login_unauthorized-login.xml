@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="1" name="Login" skipped="0" tests="3" time="15.25" timestamp="2021-02-08 07:02:32"><testcase name="Unauthorized Login"><failure message="Invalid user credentials allowed expected:&lt;401&gt; but was:&lt;200&gt;" type="java.lang.AssertionError">Invalid user credentials allowed expected:&lt;401&gt; but was:&lt;200&gt;</failure><system-err>Invalid user credentials allowed expected:&lt;401&gt; but was:&lt;200&gt;&#13;
+com.serene.tests.features.steps.LoginAPISteps.verifyLoginFailure(LoginAPISteps.java:48)&#13;
+com.serene.tests.features.steps.LoginStepDefn.login_failed(LoginStepDefn.java:63)&#13;
+✽.login failed(src/test/resources/features/Login/Login.feature:8)&#13;
+</system-err></testcase><testcase name="Successful Login and Logout"/><testcase name="Create and Update user"/></testsuite>
