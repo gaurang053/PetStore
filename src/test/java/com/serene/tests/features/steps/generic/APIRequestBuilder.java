@@ -1,4 +1,4 @@
-package com.serene.tests.features.steps;
+package com.serene.tests.features.steps.generic;
 
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;

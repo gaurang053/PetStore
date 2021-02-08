@@ -16,6 +16,7 @@ Feature: Login
     When I send request to login
     Then login is successful
     Then logout is successful
+  
   Examples: Valid
   			|username|password|
 		  	|test|test@123| 
