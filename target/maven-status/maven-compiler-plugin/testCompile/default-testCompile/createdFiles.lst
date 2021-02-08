@@ -1,6 +1,0 @@
-com\serene\tests\features\Users\UserResponse.class
-com\serene\tests\features\steps\LoginAPISteps.class
-com\serene\tests\features\TestRunner.class
-com\serene\tests\features\Users\UserInfo.class
-com\serene\tests\features\steps\APIRequestBuilder.class
-com\serene\tests\features\steps\LoginStepDefn.class

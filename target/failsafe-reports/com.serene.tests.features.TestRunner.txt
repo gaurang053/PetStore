@@ -1,7 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.serene.tests.features.TestRunner
--------------------------------------------------------------------------------
-Tests run: 3, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 17.315 s <<< FAILURE! - in com.serene.tests.features.TestRunner
-Unauthorized Login(Login)  Time elapsed: 7.528 s  <<< FAILURE!
-java.lang.AssertionError: Invalid user credentials allowed expected:<401> but was:<200>
-
