@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="1" name="User" skipped="0" tests="3" time="23.76" timestamp="2021-02-09 04:40:52"><testcase name="Create user as Array"/><testcase name="Create user as list"/><testcase name="Create, Update, Delete and Fetch user information"><failure message="&#13;&#10;The following assertion failed:&#13;&#10;1) expected:&lt;[9013685127327373573]L&gt; but was:&lt;[20]L&gt;&#13;&#10;at UserStepdDefn.allow_to_fetch_the_user_details_by(UserStepdDefn.java:68) expected:&lt;[9013685127327373573]L&gt; but was:&lt;[20]L&gt;&#13;&#10;" type="java.lang.AssertionError">&#13;
+The following assertion failed:&#13;
+1) expected:&lt;[9013685127327373573]L&gt; but was:&lt;[20]L&gt;&#13;
+at UserStepdDefn.allow_to_fetch_the_user_details_by(UserStepdDefn.java:68) expected:&lt;[9013685127327373573]L&gt; but was:&lt;[20]L&gt;&#13;
+</failure><system-err>&#13;
+The following assertion failed:&#13;
+1) expected:&lt;[9013685127327373573]L&gt; but was:&lt;[20]L&gt;&#13;
+at UserStepdDefn.allow_to_fetch_the_user_details_by(UserStepdDefn.java:68) expected:&lt;[9013685127327373573]L&gt; but was:&lt;[20]L&gt;&#13;
+&#13;
+com.serene.tests.features.steps.user.UserStepdDefn.tearDown(UserStepdDefn.java:41)&#13;
+cucumber.runner.UnskipableStep.executeStep(UnskipableStep.java:22)&#13;
+cucumber.runner.Runner.runPickle(Runner.java:80)&#13;
+</system-err></testcase></testsuite>

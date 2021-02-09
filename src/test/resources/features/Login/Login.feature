@@ -1,6 +1,6 @@
-Feature: Login
+Feature: Login & Logout
 
-	I login to application I should be able to find my user credentials
+	I login and Logout to application, I should be able to find my user credentials
 
 	Scenario Outline: Unauthorized Login
     Given I provide login credentials "<username>" and "<password>"

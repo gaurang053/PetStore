@@ -1,3 +1,4 @@
 "Story","Title","Result","Date","Stability","Duration (s)"
-"Login","Successful Login and Logout","SUCCESS","2021-02-08T19:48:58.751+01:00[Europe/Berlin]","0.0","1.74"
-"User","Create and Update user","SUCCESS","2021-02-08T19:49:00.49+01:00[Europe/Berlin]","0.0","5.75"
+"Login & Logout","Successful Login and Logout","SUCCESS","2021-02-09T16:40:50.208+01:00[Europe/Berlin]","0.0","2.16"
+"User","Create user as Array","SUCCESS","2021-02-09T16:40:52.376+01:00[Europe/Berlin]","0.0","3.37"
+"User","Create user as list","SUCCESS","2021-02-09T16:40:55.748+01:00[Europe/Berlin]","0.0","2.94"

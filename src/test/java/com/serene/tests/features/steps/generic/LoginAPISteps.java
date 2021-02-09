@@ -2,13 +2,13 @@ package com.serene.tests.features.steps.generic;
 
 import java.util.List;
 
+import org.assertj.core.api.SoftAssertions;
 import org.junit.Assert;
 
 import com.serene.tests.features.Users.UserInfo;
 import com.serene.tests.features.Users.UserResponse;
 
 import io.restassured.RestAssured;
-import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
@@ -82,7 +82,7 @@ public class LoginAPISteps {
 		APIRequestBuilder apiRequestBuilder = new APIRequestBuilder("/user/"+newUser.getUsername(),"application/json",newUser);
 		RequestSpecification requestSpec = apiRequestBuilder.getRequestSpecification();
 		requestSpec = RestAssured.given().spec(requestSpec);
-		Response res = requestSpec.when().post();
+		Response res = requestSpec.when().put();
 		return res;
 	}
 	
@@ -96,5 +96,41 @@ public class LoginAPISteps {
 		return res.as(UserResponse.class);
 	}
 
+	public UserInfo fetchUserInfoByUserName(String userName) {
+		APIRequestBuilder apiRequestBuilder = new APIRequestBuilder("/user/"+userName,"application/json",null);
+		RequestSpecification requestSpec = apiRequestBuilder.getRequestSpecification();
+		requestSpec = RestAssured.given().spec(requestSpec);
+		Response res = requestSpec.when().get();
+		return res.as(UserInfo.class);
+	}
 	
+	public void deleteUserByUserName(String userName) {
+		APIRequestBuilder apiRequestBuilder = new APIRequestBuilder("/user/"+userName,"application/json",null);
+		RequestSpecification requestSpec = apiRequestBuilder.getRequestSpecification();
+		requestSpec = RestAssured.given().spec(requestSpec);
+		Response res = requestSpec.when().delete();
+		UserResponse userResponse = userResponseDeSerialization(res);
+		Assert.assertEquals("Status Check Failed!", 200, res.getStatusCode());
+		Assert.assertEquals("Validate Status code in response ", "200", userResponse.getCode()+"");
+		Assert.assertEquals("Type ", "unknown", userResponse.getType());
+		Assert.assertEquals("User message ", userName, userResponse.getMessage());
+	}
+
+	public void compareUserInfo(SoftAssertions softAssertion, UserInfo expected, UserInfo actual) {
+		softAssertion.assertThat(expected.getUsername()).isEqualTo(actual.getUsername());
+		softAssertion.assertThat(expected.getFirstName()).isEqualTo(actual.getFirstName());
+		softAssertion.assertThat(expected.getLastName()).isEqualTo(actual.getLastName());
+		softAssertion.assertThat(expected.getEmail()).isEqualTo(actual.getEmail());
+		softAssertion.assertThat(expected.getPassword()).isEqualTo(actual.getPassword());
+		softAssertion.assertThat(expected.getPhone()).isEqualTo(actual.getPhone());
+		softAssertion.assertThat(expected.getUserStatus()).isEqualTo(actual.getUserStatus());
+		
+//		Assert.assertEquals("Validate user name", expected.getUsername(), actual.getUsername());
+//		Assert.assertEquals("Validate user firstname", expected.getFirstName(), actual.getFirstName());
+//		Assert.assertEquals("Validate user lastname", expected.getLastName(), actual.getLastName());
+//		Assert.assertEquals("Validate user email", expected.getEmail(), actual.getEmail());
+//		Assert.assertEquals("Validate user passowrd", expected.getPassword(), actual.getPassword());
+//		Assert.assertEquals("Validate user phone", expected.getPhone(), actual.getPhone());
+//		Assert.assertEquals("Validate user user status", expected.getUserStatus(), actual.getUserStatus());
+	}
 }

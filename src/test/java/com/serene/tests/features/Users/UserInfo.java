@@ -1,7 +1,7 @@
 package com.serene.tests.features.Users;
 
 public class UserInfo {
-	private Integer id;
+	private long id;
 	private String username;
 	private String firstName;
 	private String lastName;
@@ -28,7 +28,7 @@ public class UserInfo {
 	* @param email
 	* @param username
 	*/
-	public UserInfo(Integer id, String username, String firstName, String lastName, String email, String password, String phone, Integer userStatus) {
+	public UserInfo(long id, String username, String firstName, String lastName, String email, String password, String phone, Integer userStatus) {
 	super();
 	this.id = id;
 	this.username = username;
@@ -40,11 +40,11 @@ public class UserInfo {
 	this.userStatus = userStatus;
 	}
 
-	public Integer getId() {
+	public long getId() {
 	return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(long id) {
 	this.id = id;
 	}
 

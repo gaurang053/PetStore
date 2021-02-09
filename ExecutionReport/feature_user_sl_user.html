@@ -49,10 +49,10 @@
     <script class="code" type="text/javascript">$(document).ready(function () {
         var plot1 = $.jqplot('coverage_pie_chart', [
             [
-                ['Passing', 1],
+                ['Passing', 2],
                 ['Pending', 0],
                 ['Ignored', 0],
-                ['Failing', 0],
+                ['Failing', 1],
                 ['Errors',  0],
                 ['Compromised',  0],
                 ['Untested',  0],
@@ -82,10 +82,10 @@
                 marginTop: '15px'
             },
             series: [
-                {label: '1 requirements tested successfully'},
+                {label: '2 requirements tested successfully'},
                 {label: '0 requirements pending'},
                 {label: '0} requirements skipped'},
-                {label: '0} requirements with failures'},
+                {label: '1} requirements with failures'},
                 {label: '0} requirements with errors'},
                 {label: '0} requirements compromised'},
                 {label: '0} requirements untested'},
@@ -186,7 +186,7 @@
             <a href="#"><i class="fa fa-comments-o"></i> Features</a>
         </li>
     </ul>
-    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 08-02-2021 19:49</span>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 09-02-2021 16:40</span>
     <br style="clear:left"/>
 </div>
 
@@ -200,7 +200,7 @@
                     <h2><i class="fa fa-book"></i> Feature
                         :  User</h2>
                         <div class="requirementNarrativeTitle">
-                            <pre><code>I login to application I should be able to create new user and update existing user information<br></code></pre>
+                            <pre><code>I should be able to create new user as a Array or List<br></code></pre>
                         </div>
 
                 </div>
@@ -228,9 +228,9 @@
                                 <tr>
                                     <td class="summary-leading-column"><a href="#test-results-table">Acceptance Criteria
                                         (tests)</a></td>
+                                    <td>3</td>
+                                    <td>2</td>
                                     <td>1</td>
-                                    <td>1</td>
-                                    <td>0</td>
                                     <td>0</td>
                                     <td>0</td>
                                     <td></td>
@@ -259,9 +259,9 @@
         <body>
         <tr>
             <td class="summary-leading-column">Automated</td>
-            <td>1</td>
-            <td>1 (100%)</td>
-            <td>0 (0%)</td>
+            <td>3</td>
+            <td>2 (67%)</td>
+            <td>1 (33%)</td>
             <td>0 (0%)</td>
             <td>0 (0%)</td>
         </tr>
@@ -275,15 +275,15 @@
         </tr>
         <tr>
             <td class="summary-leading-column">Total</td>
-            <td>1</td>
-            <td>1 (100%)</td>
-            <td>0 (0%)</td>
+            <td>3</td>
+            <td>2 (67%)</td>
+            <td>1 (33%)</td>
             <td>0 (0%)</td>
             <td>0 (0%)</td>
         </tr>
         <tr>
             <td class="summary-leading-column">Total Duration</td>
-                <td colspan="5">6 seconds</td>
+                <td colspan="5">24 seconds</td>
         </tr>
         </body>
     </table>
@@ -318,20 +318,66 @@
                                 <td class="SUCCESS-text">
                                     <div class="ellipsis">
 
-                                        <a href="user_create-and-update-user.html" class="ellipsis"
-                                           title="Create and Update user ">
-                                            Create and Update user&nbsp;(1  examples)
+                                        <a href="user_create-user-as-array.html" class="ellipsis"
+                                           title="Create user as Array ">
+                                            Create user as Array&nbsp;(1  examples)
                                                 <span class="related-issue-title"></span>
                                         </a>
                                     </div>
                                 </td>
 
-                                <td class="SUCCESS-text">33</td>
+                                <td class="SUCCESS-text">10</td>
 
 
-                                <td class="SUCCESS-text" data-sort="2021-02-08 19:49:00">19:49:00</td>
+                                <td class="SUCCESS-text" data-sort="2021-02-09 16:40:52">16:40:52</td>
 
-                                <td class="SUCCESS-text">5.75</td>
+                                <td class="SUCCESS-text">3.37</td>
+                            </tr>
+
+                            <tr class="test-SUCCESS">
+                                <td><span class="summary-icon"><i class='fa fa-check-square-o success-icon ' title='SUCCESS'></i></span>
+                                    
+                                    <span style="display:none">SUCCESS</span></td>
+                                <td class="SUCCESS-text">
+                                    <div class="ellipsis">
+
+                                        <a href="user_create-user-as-list.html" class="ellipsis"
+                                           title="Create user as list ">
+                                            Create user as list&nbsp;(1  examples)
+                                                <span class="related-issue-title"></span>
+                                        </a>
+                                    </div>
+                                </td>
+
+                                <td class="SUCCESS-text">10</td>
+
+
+                                <td class="SUCCESS-text" data-sort="2021-02-09 16:40:55">16:40:55</td>
+
+                                <td class="SUCCESS-text">2.94</td>
+                            </tr>
+
+                            <tr class="test-FAILURE">
+                                <td><span class="summary-icon"><i class='fa fa-times-circle failure-icon ' title='FAILURE'></i></span>
+                                    
+                                    <span style="display:none">FAILURE</span></td>
+                                <td class="FAILURE-text">
+                                    <div class="ellipsis">
+
+                                        <a href="user_create--update--delete-and-fetch-user-information.html" class="ellipsis"
+                                           title="Create, Update, Delete and Fetch user information Assertion error: The following assert...">
+                                            Create, Update, Delete and Fetch user information&nbsp;(1  examples)
+                                                <span class="related-issue-title"></span>
+                                        </a>
+                                    </div>
+                                </td>
+
+                                <td class="FAILURE-text">36</td>
+
+
+                                <td class="FAILURE-text" data-sort="2021-02-09 16:40:58">16:40:58</td>
+
+                                <td class="FAILURE-text">17.46</td>
                             </tr>
                         </tbody>
                     </table>
