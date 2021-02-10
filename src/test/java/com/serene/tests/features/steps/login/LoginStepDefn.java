@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.junit.runner.RunWith;
 
-import com.serene.tests.features.Users.UserInfo;
+import com.serene.tests.features.pojo.users.UserInfo;
 import com.serene.tests.features.steps.generic.LoginAPISteps;
 
 import cucumber.api.java.After;

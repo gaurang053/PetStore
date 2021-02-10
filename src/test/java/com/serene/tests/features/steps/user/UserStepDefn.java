@@ -6,7 +6,7 @@ import org.assertj.core.api.SoftAssertions;
 import org.junit.Assert;
 import org.junit.runner.RunWith;
 
-import com.serene.tests.features.Users.UserInfo;
+import com.serene.tests.features.pojo.users.UserInfo;
 import com.serene.tests.features.steps.generic.LoginAPISteps;
 
 import cucumber.api.java.After;
@@ -23,7 +23,7 @@ import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Steps;
 
 @RunWith(SerenityRunner.class)
-public class UserStepdDefn {
+public class UserStepDefn {
 
 	public Response res = null; // Response
 	public JsonPath jp = null; // JsonPath

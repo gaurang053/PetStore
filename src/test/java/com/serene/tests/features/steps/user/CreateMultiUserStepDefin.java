@@ -12,8 +12,8 @@ import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import com.serene.tests.features.Users.UserInfo;
-import com.serene.tests.features.Users.UserResponse;
+import com.serene.tests.features.pojo.users.UserInfo;
+import com.serene.tests.features.pojo.users.UserResponse;
 import com.serene.tests.features.steps.generic.APIRequestBuilder;
 import com.serene.tests.features.steps.generic.LoginAPISteps;
 

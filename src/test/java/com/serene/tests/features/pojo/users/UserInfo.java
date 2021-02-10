@@ -1,4 +1,4 @@
-package com.serene.tests.features.Users;
+package com.serene.tests.features.pojo.users;
 
 public class UserInfo {
 	private long id;

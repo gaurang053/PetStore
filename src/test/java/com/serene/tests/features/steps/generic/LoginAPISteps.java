@@ -5,8 +5,8 @@ import java.util.List;
 import org.assertj.core.api.SoftAssertions;
 import org.junit.Assert;
 
-import com.serene.tests.features.Users.UserInfo;
-import com.serene.tests.features.Users.UserResponse;
+import com.serene.tests.features.pojo.users.UserInfo;
+import com.serene.tests.features.pojo.users.UserResponse;
 
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
@@ -68,7 +68,6 @@ public class LoginAPISteps {
 	
 	@Step
 	public void validateCreateUserResponse(Response res) {
-		JsonPath jp = res.jsonPath();
 		UserResponse userResponse = userResponseDeSerialization(res);
 		Assert.assertEquals("Status Check Failed!", 200, res.getStatusCode());
 		Assert.assertEquals("Validate Status code in response ", "200", userResponse.getCode()+"");
