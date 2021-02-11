@@ -20,10 +20,10 @@ Techonlogy used - Serenity, REST Assured, Cucumber and JAVA
 * User - Operations about users 
 ```
 1_ As a End User, I can login and logout to the application using API
-Valid and Invalid Scenario covered
-API Covered
-* GET /user/login - Logs user into the system
-* /user/logout - Logs out current logged in user session
+			 Valid and Invalid Scenario covered
+			 API Covered
+				* GET /user/login - Logs user into the system
+				* /user/logout - Logs out current logged in user session
 2_ As a Admin User, I can create new user, view or update existing user information and delete the user  
 ```
 
