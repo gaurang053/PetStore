@@ -25,7 +25,7 @@ Techonlogy used - Serenity, REST Assured, Cucumber and JAVA
 * or Execute maven command - mvn clean verify
 
 # How to write new tests ? 
-* Create new feature file or Add Scenario (Outline, Given, When, Then) in a existing feature file with Valid Data 
+* Step1. Create new feature file or Add Scenario (Outline, Given, When, Then) in a existing feature file with Valid Data 
 ```
 *************************   Sample Cucumber File  *************************
 
@@ -39,7 +39,9 @@ Scenario Outline: As a End User, Valid user can login and logout to the applicat
 	|username|password|
 	|test|test@123| 
 ```
-* Add new methods with Given, When and Then Annotation in new/existing Step Defination class file 
+* Step2. Add new methods with Given, When and Then Annotation in new/existing Step Defination class file. 
+
+```
 *************************   Sample Class File  *************************
 
 @RunWith(SerenityRunner.class)
@@ -78,11 +80,22 @@ public class LoginStepDefn{
 	}
 }
 ```
+* Step3. Create a POJO class based on Request or Response JSON
+```
+* Create package like..  com.serene.tests.features.pojo.users
+* Create class like.. UserInfo or UserResponse
+For detail information, please refer usecase present at#  https://www.toolsqa.com/rest-assured/convert-json-to-java-object/
+```
+* Project Structure
+```
+![Project Structure]ProjectStructure.png
+```
+
 # Story Descriptin
 Below list of story covere API capabilities of Login, PetProfile, Store and User. The story design such a way it cover all APIs present in the swagger. 
 	
 * User - Operations about users 
-```
+
 1_ As a End User, I can login and logout to the application using API
 Description: Valid and Invalid Scenario covered
 API Scenarion:
