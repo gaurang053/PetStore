@@ -147,14 +147,14 @@ src
     + java                                Test runners and supporting code
       + features                          Test Runner Class 
       + pojo                              POJO to map Request or Response
-	  + generic                           Helper class, write core logic which interact with step defination
+      + generic                           Helper class, write core logic which interact with step defination
       + stepDefinition                    Write fature files mapping methods ( Business Logic)
     + resources
       + features                          Feature files
           + Login
           + User
-		  + Pet
-		  + Store
+          + Pet
+          + Store
 		  
              record_a_new_trade.feature 
 ```
