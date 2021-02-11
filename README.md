@@ -36,8 +36,8 @@ Scenario Outline: As a End User, Valid user can login and logout to the applicat
     Then logout is successful
   
   Examples: Valid
-  			|username|password|
-		  	|test|test@123| 
+	|username|password|
+	|test|test@123| 
 ```
 
 # Story Descriptin
