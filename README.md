@@ -27,7 +27,7 @@ Techonlogy used - Serenity, REST Assured, Cucumber and JAVA
 # How to write new tests ? 
 * Create new feature file or Add Scenario (Outline, Given, When, Then) in a existing file with Valid Data 
 ```
-*************************   For Examples  *************************
+*************************   Sample Cucumber File  *************************
 
 Scenario Outline: As a End User, Valid user can login and logout to the application using API
     Given I provide login credentials "<username>" and "<password>"
@@ -38,6 +38,47 @@ Scenario Outline: As a End User, Valid user can login and logout to the applicat
   Examples: Valid
 	|username|password|
 	|test|test@123| 
+```
+* Add new methods with Given, When and Then Annotation in new/existing Step Defination File 
+*************************   Sample Class File  *************************
+
+@RunWith(SerenityRunner.class)
+public class LoginStepDefn{
+
+    @Before
+	public void setup()
+	{
+    	RestAssured.baseURI = "https://petstore.swagger.io/v2";
+	}
+	@After
+	public void tearDown()
+	{
+        RestAssured.reset();
+	}
+	
+	@Given("^I provide login credentials \"([^\"]*)\" and \"([^\"]*)\"$")
+	public void i_provide_login_credentials_and(String username, String password){
+		//Write your code
+	}
+
+	@When("^I send request to login$")
+	public void i_send_request_to_login() {
+	    // Write code here that turns the phrase above into concrete actions
+		
+	}
+
+	@Then("^login is successful$")
+	public void login_is_successful() {
+		// Write code here that turns the phrase above into concrete actions
+	}
+	
+	@Then("^logout is successful$")
+	public void logout_is_successful() {
+		// Write code here that turns the phrase above into concrete actions
+	}
+}
+
+ 
 ```
 
 # Story Descriptin
