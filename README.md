@@ -25,7 +25,7 @@ Techonlogy used - Serenity, REST Assured, Cucumber and JAVA
 * or Execute maven command - mvn clean verify
 
 # How to write new tests ? 
-* Create new feature file or Add Scenario (Outline, Given, When, Then) in a existing file with Valid Data 
+* Create new feature file or Add Scenario (Outline, Given, When, Then) in a existing feature file with Valid Data 
 ```
 *************************   Sample Cucumber File  *************************
 
@@ -39,7 +39,7 @@ Scenario Outline: As a End User, Valid user can login and logout to the applicat
 	|username|password|
 	|test|test@123| 
 ```
-* Add new methods with Given, When and Then Annotation in new/existing Step Defination File 
+* Add new methods with Given, When and Then Annotation in new/existing Step Defination class file 
 *************************   Sample Class File  *************************
 
 @RunWith(SerenityRunner.class)
@@ -77,10 +77,7 @@ public class LoginStepDefn{
 		// Write code here that turns the phrase above into concrete actions
 	}
 }
-
- 
 ```
-
 # Story Descriptin
 Below list of story covere API capabilities of Login, PetProfile, Store and User. The story design such a way it cover all APIs present in the swagger. 
 	
