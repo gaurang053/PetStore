@@ -2,7 +2,7 @@ Feature: User - Operations about users - Login & Logout
 
 	As a End-User, I can login and logout to the application using API
 
-	Scenario Outline: Unauthorized Login
+	Scenario Outline: As a End-User, Unauthorized user can not login to the application using API
     Given I provide login credentials "<username>" and "<password>"
     When I send request to login
     Then login failed
@@ -11,7 +11,7 @@ Feature: User - Operations about users - Login & Logout
   			|username|password|
 		  	|test-user|abc122|
 		  	
-	Scenario Outline: Successful Login and Logout
+	Scenario Outline: As a End-User, Authorized user can login and logout to the application using API
     Given I provide login credentials "<username>" and "<password>"
     When I send request to login
     Then login is successful
