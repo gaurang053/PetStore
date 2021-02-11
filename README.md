@@ -1,5 +1,11 @@
 ![REST Assured](rest-assured-logo-green.png)
 # Appplicatin : PetStore
+Pet store is Serenity BDD framework based REST API Automation project. Imagine you are a part of the team that perfoms quality assuarnce for a Pet store applicaotin, The frontend design is under development but API has already bee n published. QA collobrate with developer team to make the feature  more robusy, by helping them write tests for some workflows that they might break while progress with developing busines logic. The task is to cover
+* To create a test automation framework skeleton
+* To test the application using available endpoint
+* Swagger URL# https://petstore.swagger.io/#/pet/updatePet
+
+
 Testing REST services in Java
 Techonlogy used - Serenity, REST Assured, Cucumber and JAVA
 
@@ -14,8 +20,9 @@ Techonlogy used - Serenity, REST Assured, Cucumber and JAVA
 # How to execute this project?
 * Double click on execute.bat file present at root  or 
 * or Execute maven command - mvn clean verify
-# Description
-Pet store is Serenity based REST API Automation project. As part of development, Below list of high level story design to cover all APIs present in the swagger. Swagger URL# https://petstore.swagger.io/#/pet/updatePet
+
+# Story Descriptin
+Below list of story covere API capabilities of Login, PetProfile, Store and User. The story design such a way it cover all APIs present in the swagger. 
 	
 * User - Operations about users 
 ```
