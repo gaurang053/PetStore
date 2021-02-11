@@ -5,8 +5,9 @@ Pet store is Serenity BDD framework based REST API Automation project. Imagine y
 Goal is to cover: 
 * To create a test automation framework skeleton
 * To test the application using available endpoint
-* Swagger URL# https://petstore.swagger.io/#/pet/updatePet
 ```
+* Reference: Swagger URL# https://petstore.swagger.io/#/pet/updatePet
+
 
 Testing REST services in Java
 Techonlogy used - Serenity, REST Assured, Cucumber and JAVA
