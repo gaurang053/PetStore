@@ -17,18 +17,18 @@ Techonlogy used - Serenity, REST Assured, Cucumber and JAVA
 #Story Covered
 * User - Operations about users 
 ```
-1__ As a End User, I can login and logout to the application using API  
-2__ As a Admin User, I can create new user, view or update existing user information and delete the user  
+1_ As a End User, I can login and logout to the application using API  
+2_ As a Admin User, I can create new user, view or update existing user information and delete the user  
 ```
 * Store - Access to Petstore order 
 ```
-3__ As a End User, I can control Pet Order Cart
-4__ As a Store Owner, I would like to check my inventory
+3_ As a End User, I can control Pet Order Cart
+4_ As a Store Owner, I would like to check my inventory
 ```
 * Pet - Everything about Pets 
 ```
-5__ As a Store Owner, I would like add new pet profile, upload pet image and delete pet profile
-6__ As a Store Owner, I would like add update pet profile, view pet info by status or create new pet profile with form data
+5_ As a Store Owner, I would like add new pet profile, upload pet image and delete pet profile
+6_ As a Store Owner, I would like add update pet profile, view pet info by status or create new pet profile with form data
 ```
 #Reference Test Report
 ![Test Report](TestReport.png)
