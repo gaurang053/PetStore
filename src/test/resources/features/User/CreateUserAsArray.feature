@@ -1,8 +1,8 @@
-Feature: User
+Feature: User - Operations about users
 
-	I should be able to create new user as a Array or List
+	As a user admin, I can create multiple user either using Array or List
 
-	Scenario Outline: Create no of user in a one request with Array
+	Scenario Outline: As a user admin, I can create multiple user with Array
     Given I provide user information "<userData1>" and "<userData2>" to create array 
     When I send request to crete user with Array
     Then Create user is successful with Array
@@ -13,7 +13,7 @@ Feature: User
   			|userData1|userData2|
 		  	|20,testuser1,firstname,lastname,testuser@gmail.com,test123,123456789,0|21,testuser2,firstname2,lastname2,testuser2@gmail.com,test2123,123456789,0|
 		  	
-	Scenario Outline: Create no of user in a one request with list
+	Scenario Outline: As a user admin, I can create multiple user with List
     Given I provide user information "<userData3>" and "<userData4>" to create list 
     When I send request to crete user with list
     Then Create user is successful with list
