@@ -59,7 +59,7 @@ public class PetProfileStepDefn implements StepDefn{
 	}
 
 	@Then("^I upload a pet image \"([^\"]*)\" by \"([^\"]*)\"$")
-	public void i_upload_a_pet_image_using(String petId,String image) {
+	public void i_upload_a_pet_image_using(String image,String petId) {
 		String dir = System.getProperty("user.dir");
 		PetAPIResponse expectedResponse = petAPISteps.uploadImageOfPetById(dir+image, PetProfileStepDefn.petUrl,petId);
 		Assert.assertEquals("Status Check Passed!", "200", expectedResponse.getCode().toString());	

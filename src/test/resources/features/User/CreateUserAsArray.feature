@@ -1,8 +1,8 @@
 Feature: User - Operations about users
 
-	As a user admin, I can create multiple user either using Array or List
+	As a User Admin, I can create multiple user either using Array or List
 
-	Scenario Outline: As a user admin, I can create multiple user with Array
+	Scenario Outline: As a Aser Admin, I can create multiple user with Array
     Given I provide user information "<userData1>" and "<userData2>" to create array 
     When I send request to crete user with Array
     Then Create user is successful with Array

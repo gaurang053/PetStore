@@ -1,6 +1,6 @@
-Feature: Login & Logout
+Feature: User - Operations about users - Login & Logout
 
-	I login and Logout to application, I should be able to find my user credentials
+	As a End-User, I can login and logout to the application using API
 
 	Scenario Outline: Unauthorized Login
     Given I provide login credentials "<username>" and "<password>"
