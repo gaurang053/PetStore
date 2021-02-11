@@ -1,4 +1,4 @@
 "Story","Title","Result","Date","Stability","Duration (s)"
-"User","Create user as Array","SUCCESS","2021-02-09T16:40:52.376+01:00[Europe/Berlin]","0.0","3.37"
-"User","Create user as list","SUCCESS","2021-02-09T16:40:55.748+01:00[Europe/Berlin]","0.0","2.94"
-"User","Create, Update, Delete and Fetch user information","FAILURE","2021-02-09T16:40:58.687+01:00[Europe/Berlin]","0.0","17.46"
+"User","Create no of user in a one request with Array","SUCCESS","2021-02-11T11:06:23.386+01:00[Europe/Berlin]","0.0","3.67"
+"User","Create no of user in a one request with list","SUCCESS","2021-02-11T11:06:27.054+01:00[Europe/Berlin]","0.0","3.59"
+"User","Create, Update, Delete and Fetch user information","FAILURE","2021-02-11T11:06:30.644+01:00[Europe/Berlin]","0.0","24.4"

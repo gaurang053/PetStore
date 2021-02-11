@@ -1,3 +1,3 @@
 "Story","Title","Result","Date","Stability","Duration (s)"
-"User","Create user as Array","SUCCESS","2021-02-09T16:40:52.376+01:00[Europe/Berlin]","0.0","3.37"
-"User","Create user as list","SUCCESS","2021-02-09T16:40:55.748+01:00[Europe/Berlin]","0.0","2.94"
+"User","Create no of user in a one request with Array","SUCCESS","2021-02-11T11:06:23.386+01:00[Europe/Berlin]","0.0","3.67"
+"User","Create no of user in a one request with list","SUCCESS","2021-02-11T11:06:27.054+01:00[Europe/Berlin]","0.0","3.59"
