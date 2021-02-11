@@ -1,4 +1,4 @@
-package com.serene.tests.features.steps.login;
+package com.serene.tests.features.steps.stepDefinition;
 
 import java.util.List;
 

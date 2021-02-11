@@ -1,9 +1,10 @@
-package com.serene.tests.features.steps.store;
+package com.serene.tests.features.steps.stepDefinition;
 
 import java.util.List;
 
 import org.assertj.core.api.SoftAssertions;
 import org.junit.Assert;
+import org.junit.runner.RunWith;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
@@ -24,8 +25,10 @@ import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
+import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Steps;
 
+@RunWith(SerenityRunner.class)
 public class StoreStepDefn implements StepDefn{
 	
 	private Response res = null; // Response
