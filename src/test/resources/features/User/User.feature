@@ -2,7 +2,7 @@ Feature: User - Operations about users
 
 	As a Admin User, I can create new user, view or update existing user information and delete the user
 
-	Scenario Outline: As a Admin User, I can create new user, view or update existing user information and delete the user
+	Scenario Outline: As a Admin User, I can create new user, view, update, delete the existing user
     Given I provide login information "<userData>" 
     When I send request to crete user
     Then Create user is successful
