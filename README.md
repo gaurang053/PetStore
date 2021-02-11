@@ -87,9 +87,9 @@ public class LoginStepDefn{
 For detail information, please refer usecase present at#  https://www.toolsqa.com/rest-assured/convert-json-to-java-object/
 ```
 * Project Structure
-```
+
 ![Project Structure]ProjectStructure.png
-```
+
 
 # Story Descriptin
 Below list of story covere API capabilities of Login, PetProfile, Store and User. The story design such a way it cover all APIs present in the swagger. 
