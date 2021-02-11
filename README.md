@@ -20,9 +20,25 @@ Techonlogy used - Serenity, REST Assured, Cucumber and JAVA
 # Getting Started
 * Clone this repository - gh repo clone gaurang053/petStore
 
-# How to execute this project?
+# How to install and run this project?
 * Double click on execute.bat file present at root  or 
 * or Execute maven command - mvn clean verify
+
+# How to write new tests ? 
+* Create new feature file or Add Scenario (Outline, Given, When, Then) in a existing file with Valid Data 
+```
+*************************   For Examples  *************************
+
+Scenario Outline: As a End User, Valid user can login and logout to the application using API
+    Given I provide login credentials "<username>" and "<password>"
+    When I send request to login
+    Then login is successful
+    Then logout is successful
+  
+  Examples: Valid
+  			|username|password|
+		  	|test|test@123| 
+```
 
 # Story Descriptin
 Below list of story covere API capabilities of Login, PetProfile, Store and User. The story design such a way it cover all APIs present in the swagger. 
