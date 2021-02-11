@@ -23,9 +23,18 @@ Techonlogy used - Serenity, REST Assured, Cucumber and JAVA
 Description: Valid and Invalid Scenario covered
 API Scenarion:
 * GET /user/login - Logs user into the system
-* /user/logout - Logs out current logged in user session
+* GET /user/logout - Logs out current logged in user session
 ```
-2_ As a Admin User, I can create new user, view or update existing user information and delete the user  
+```
+2_ As a Admin User, I can create new user, view or update existing user information and delete the user 
+Description: Create new user, View user information, Update or Delete Existing user
+API Scenarion:
+* POST /user Create user
+* GET /user/{username} Get user by username
+* PUT /user{username} Updated user
+* DELETE /user/{username} Delete User
+* POST /user/createWithArray Creates list of users with given input array
+* POST /user/createWithList Creates list of users with given input array
 ```
 
 * Store - Access to Petstore order 
