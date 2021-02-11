@@ -140,7 +140,24 @@ public class LoginStepDefn{
 For detail information, please refer usecase present at#  https://www.toolsqa.com/rest-assured/convert-json-to-java-object/
 ```
 * Project Structure
-
+```
+src
+  + main
+  + test
+    + java                                Test runners and supporting code
+      + features         				  Test Runner Class 
+      + pojo  							  POJO to map Request or Response
+	  + generic							  Helper class, write core logic which interact with step defination
+      + stepDefinition					  Write fature files mapping methods ( Business Logic)
+    + resources
+      + features                          Feature files
+          + Login
+          + User
+		  + Pet
+		  + Store
+		  
+             record_a_new_trade.feature 
+```
 ![Project Structure](ProjectStructure.png)
 
 # Reference Test Report
