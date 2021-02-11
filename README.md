@@ -16,8 +16,10 @@ Techonlogy used - Serenity, REST Assured, Cucumber and JAVA
 
 #Story Covered
 * User - Operations about users 
-	** As a End User, I can login and logout to the application using API
-	** As a Admin User, I can create new user, view or update existing user information and delete the user
+```
+	* As a End User, I can login and logout to the application using API  
+	* As a Admin User, I can create new user, view or update existing user information and delete the user  
+```
 * Store - Access to Petstore order 
 	** As a End User, I can control Pet Order Cart
 	** As a Store Owner, I would like to check my inventory
