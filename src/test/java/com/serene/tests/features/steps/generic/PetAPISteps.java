@@ -19,7 +19,7 @@ import net.thucydides.core.annotations.Step;
 
 public class PetAPISteps {
 
-	public Pet createStoreClass(List<String> petData) {
+	public Pet createPetClass(List<String> petData) {
 		Category category = new Category(Integer.parseInt(petData.get(1)),petData.get(2));
 		
 		List<String> photoUrls = new ArrayList<>();

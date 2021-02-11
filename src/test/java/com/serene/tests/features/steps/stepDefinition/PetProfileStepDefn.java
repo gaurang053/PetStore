@@ -46,7 +46,7 @@ public class PetProfileStepDefn implements StepDefn {
 	@Given("^As a owner I would add new pet \"([^\"]*)\" to the store with url \"([^\"]*)\"$")
 	public void as_a_owner_I_would_add_new_pet_to_the_store_with_url(List<String> petData, String url) {
 		PetProfileStepDefn.petUrl = url;
-		this.petInfo = petAPISteps.createStoreClass(petData);
+		this.petInfo = petAPISteps.createPetClass(petData);
 		this.res = petAPISteps.createPetRequest(PetProfileStepDefn.petUrl, this.petInfo);
 		Pet petResponse = petAPISteps.validatePetInfoIsAdded(this.res);
 		petAPISteps.comparePetInfo(softAssertion, this.petInfo, petResponse);
@@ -78,13 +78,13 @@ public class PetProfileStepDefn implements StepDefn {
 
 	@Given("^As a Shop owner, I can create new pet \"([^\"]*)\" profile information$")
 	public void as_a_Shop_owner_I_can_create_new_pet_profile_using_form_data(List<String> petData) {
-		this.petInfo = petAPISteps.createStoreClass(petData);
+		this.petInfo = petAPISteps.createPetClass(petData);
 		this.res = petAPISteps.createPetRequest(PetProfileStepDefn.petUrl, this.petInfo);
 	}
 
 	@When("^Once, the profile created, I can update the Pet data \"([^\"]*)\" and Validate$")
 	public void once_the_profile_created_I_can_update_the_Pet_data_and_Validate(List<String> petDataToBeUpdated) {
-		Pet toBeUpdated = petAPISteps.createStoreClass(petDataToBeUpdated);
+		Pet toBeUpdated = petAPISteps.createPetClass(petDataToBeUpdated);
 		Pet actualResponse = petAPISteps.updatePetRequest(PetProfileStepDefn.petUrl, toBeUpdated);
 		petAPISteps.comparePetInfo(softAssertion, toBeUpdated, actualResponse);
 	}
