@@ -1,6 +1,6 @@
 ![REST Assured](rest-assured-logo-green.png)
 # Appplicatin : PetStore
-Pet store is Serenity BDD framework based REST API Automation project. Imagine you are a part of the team that perfoms quality assuarnce for a Pet store applicaotin, The frontend design is under development but API has already bee n published. QA collobrate with developer team to make the feature  more robusy, by helping them write tests for some workflows that they might break while progress with developing busines logic. 
+Pet store is Serenity BDD framework based REST API Automation project. Imagine you are a part of the team that perfoms quality assuarnce for a Pet store application, The frontend design is under development but API has already been published. QA collobrate with developer team to make the feature  more robusy, by targetting to write tests for some workflows that they might break while developing busines logic. 
 ```
 Goal is to cover: 
 * To create a test automation framework skeleton
