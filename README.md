@@ -88,7 +88,7 @@ For detail information, please refer usecase present at#  https://www.toolsqa.co
 ```
 * Project Structure
 
-![Project Structure]ProjectStructure.png
+![Project Structure](ProjectStructure.png)
 
 
 # Story Descriptin
