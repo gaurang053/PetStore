@@ -95,7 +95,7 @@ For detail information, please refer usecase present at#  https://www.toolsqa.co
 Below list of story covere API capabilities of Login, PetProfile, Store and User. The story design such a way it cover all APIs present in the swagger. 
 	
 * User - Operations about users 
-
+```
 1_ As a End User, I can login and logout to the application using API
 Description: Valid and Invalid Scenario covered
 API Scenarion:
