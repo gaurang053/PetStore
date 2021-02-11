@@ -3,7 +3,6 @@ package com.serene.tests.features.steps.stepDefinition;
 import java.util.List;
 
 import org.assertj.core.api.SoftAssertions;
-import org.junit.Assert;
 import org.junit.runner.RunWith;
 
 import com.serene.tests.features.pojo.users.UserInfo;

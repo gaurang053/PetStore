@@ -1,6 +1,6 @@
 package com.serene.tests.features.pojo.users;
 
-public class UserResponse {
+public class UserAPIResponse {
 	private Integer code;
 	private String type;
 	private String message;
@@ -10,7 +10,7 @@ public class UserResponse {
 	 * @return 
 	*
 	*/
-	public UserResponse() {
+	public UserAPIResponse() {
 	}
 
 	/**
@@ -20,7 +20,7 @@ public class UserResponse {
 	* @param message
 	 * @return 
 	*/
-	public UserResponse(Integer code, String type, String message) {
+	public UserAPIResponse(Integer code, String type, String message) {
 	super();
 	this.code = code;
 	this.type = type;

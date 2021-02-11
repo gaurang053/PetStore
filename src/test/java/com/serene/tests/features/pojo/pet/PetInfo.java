@@ -1,8 +1,8 @@
-package com.serene.tests.features.pojo.petProfile;
+package com.serene.tests.features.pojo.pet;
 
 import java.util.List;
 
-public class Pet {
+public class PetInfo {
 
 	private Integer id;
 	private Category category;
@@ -15,7 +15,7 @@ public class Pet {
 	 * No args constructor for use in serialization
 	 *
 	 */
-	public Pet() {
+	public PetInfo() {
 	}
 
 	/**
@@ -27,7 +27,7 @@ public class Pet {
 	 * @param tags
 	 * @param status
 	 */
-	public Pet(Integer id, Category category, String name, List<String> photoUrls, List<Tag> tags, String status) {
+	public PetInfo(Integer id, Category category, String name, List<String> photoUrls, List<Tag> tags, String status) {
 		super();
 		this.id = id;
 		this.category = category;

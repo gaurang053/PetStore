@@ -1,4 +1,4 @@
-package com.serene.tests.features.pojo.petProfile;
+package com.serene.tests.features.pojo.pet;
 
 public class PetAPIResponse {
 	private Integer code;

@@ -6,7 +6,7 @@ import org.assertj.core.api.SoftAssertions;
 import org.junit.Assert;
 
 import com.serene.tests.features.pojo.users.UserInfo;
-import com.serene.tests.features.pojo.users.UserResponse;
+import com.serene.tests.features.pojo.users.UserAPIResponse;
 
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
@@ -68,7 +68,7 @@ public class LoginAPISteps {
 	
 	@Step
 	public void validateCreateUserResponse(Response res) {
-		UserResponse userResponse = userResponseDeSerialization(res);
+		UserAPIResponse userResponse = userResponseDeSerialization(res);
 		Assert.assertEquals("Status Check Failed!", 200, res.getStatusCode());
 		Assert.assertEquals("Validate Status code in response ", "200", userResponse.getCode()+"");
 		Assert.assertEquals("Type ", "unknown", userResponse.getType());
@@ -91,8 +91,8 @@ public class LoginAPISteps {
 		
 	}
 	@Step
-	public UserResponse userResponseDeSerialization(Response res) {
-		return res.as(UserResponse.class);
+	public UserAPIResponse userResponseDeSerialization(Response res) {
+		return res.as(UserAPIResponse.class);
 	}
 
 	public UserInfo fetchUserInfoByUserName(String userName) {
@@ -108,7 +108,7 @@ public class LoginAPISteps {
 		RequestSpecification requestSpec = apiRequestBuilder.getRequestSpecification();
 		requestSpec = RestAssured.given().spec(requestSpec);
 		Response res = requestSpec.when().delete();
-		UserResponse userResponse = userResponseDeSerialization(res);
+		UserAPIResponse userResponse = userResponseDeSerialization(res);
 		Assert.assertEquals("Status Check Failed!", 200, res.getStatusCode());
 		Assert.assertEquals("Validate Status code in response ", "200", userResponse.getCode()+"");
 		Assert.assertEquals("Type ", "unknown", userResponse.getType());

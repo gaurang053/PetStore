@@ -6,11 +6,10 @@ import java.util.List;
 import org.assertj.core.api.SoftAssertions;
 import org.junit.Assert;
 
-import com.serene.tests.features.pojo.petProfile.Category;
-import com.serene.tests.features.pojo.petProfile.PetAPIResponse;
-import com.serene.tests.features.pojo.petProfile.Pet;
-import com.serene.tests.features.pojo.petProfile.Tag;
-import com.serene.tests.features.pojo.store.StoreInfo;
+import com.serene.tests.features.pojo.pet.Category;
+import com.serene.tests.features.pojo.pet.PetAPIResponse;
+import com.serene.tests.features.pojo.pet.PetInfo;
+import com.serene.tests.features.pojo.pet.Tag;
 
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
@@ -19,7 +18,7 @@ import net.thucydides.core.annotations.Step;
 
 public class PetAPISteps {
 
-	public Pet createPetClass(List<String> petData) {
+	public PetInfo createPetClass(List<String> petData) {
 		Category category = new Category(Integer.parseInt(petData.get(1)),petData.get(2));
 		
 		List<String> photoUrls = new ArrayList<>();
@@ -27,11 +26,11 @@ public class PetAPISteps {
 		List<Tag> tags = new ArrayList<>();
 		Tag tagData = new Tag(Integer.parseInt(petData.get(5)),petData.get(6));
 		tags.add(tagData);
-		Pet petInfo = new Pet(Integer.parseInt(petData.get(0)),category,petData.get(3),photoUrls,tags,petData.get(7));
+		PetInfo petInfo = new PetInfo(Integer.parseInt(petData.get(0)),category,petData.get(3),photoUrls,tags,petData.get(7));
 		return petInfo;
 	}
 
-	public Response createPetRequest(String url, Pet petInfo) {
+	public Response createPetRequest(String url, PetInfo petInfo) {
 		APIRequestBuilder apiRequestBuilder = new APIRequestBuilder(url, "application/json", petInfo);
 		RequestSpecification requestSpec = apiRequestBuilder.getRequestSpecification();
 		requestSpec = RestAssured.given().spec(requestSpec);
@@ -40,17 +39,17 @@ public class PetAPISteps {
 		
 	}
 	@Step
-	public Pet validatePetInfoIsAdded(Response res) {
-		Pet petInfo = petResponseDeSerialization(res);
+	public PetInfo validatePetInfoIsAdded(Response res) {
+		PetInfo petInfo = petResponseDeSerialization(res);
 		Assert.assertEquals("Status Check Passed!", 200, res.getStatusCode());
 		return petInfo;
 	}
 
-	private Pet petResponseDeSerialization(Response res) {
-		return res.as(Pet.class);
+	private PetInfo petResponseDeSerialization(Response res) {
+		return res.as(PetInfo.class);
 	}
 	
-	public void comparePetInfo(SoftAssertions softAssertion, Pet expectedPetInfo, Pet actualPetResponse) {
+	public void comparePetInfo(SoftAssertions softAssertion, PetInfo expectedPetInfo, PetInfo actualPetResponse) {
 		softAssertion.assertThat(expectedPetInfo.getId()).isEqualTo(actualPetResponse.getId());
 		softAssertion.assertThat(expectedPetInfo.getName()).isEqualTo(actualPetResponse.getName());
 		softAssertion.assertThat(expectedPetInfo.getStatus()).isEqualTo(actualPetResponse.getStatus());
@@ -62,12 +61,12 @@ public class PetAPISteps {
 		
 	}
 
-	public Pet fetchPetInfoById(String url,String petId) {
+	public PetInfo fetchPetInfoById(String url,String petId) {
 		APIRequestBuilder apiRequestBuilder = new APIRequestBuilder(url + "/" + petId, "application/json", null);
 		RequestSpecification requestSpec = apiRequestBuilder.getRequestSpecification();
 		requestSpec = RestAssured.given().spec(requestSpec);
 		Response res = requestSpec.when().get();
-		Pet expectedResponse = res.as(Pet.class);
+		PetInfo expectedResponse = res.as(PetInfo.class);
 		Assert.assertEquals("Status Check Passed!", 200, res.getStatusCode());
 		return expectedResponse;
 		
@@ -94,22 +93,22 @@ public class PetAPISteps {
 		return expectedResponse;
 	}
 
-	public Pet updatePetRequest(String petUrl, Pet toBeUpdated) {
+	public PetInfo updatePetRequest(String petUrl, PetInfo toBeUpdated) {
 		APIRequestBuilder apiRequestBuilder = new APIRequestBuilder(petUrl,"application/json",toBeUpdated);
 		RequestSpecification requestSpec = apiRequestBuilder.getRequestSpecification();
 		requestSpec = RestAssured.given().spec(requestSpec);
 		Response res = requestSpec.when().put();
-		Pet expectedResponse = res.as(Pet.class);
+		PetInfo expectedResponse = res.as(PetInfo.class);
 		Assert.assertEquals("Status Check Passed!", 200, res.getStatusCode());
 		return expectedResponse;
 	}
 
-	public Pet[] findPetInfoByStatus(String petUrl) {
+	public PetInfo[] findPetInfoByStatus(String petUrl) {
 		APIRequestBuilder apiRequestBuilder = new APIRequestBuilder(petUrl,"application/json",null);
 		RequestSpecification requestSpec = apiRequestBuilder.getRequestSpecification();
 		requestSpec = RestAssured.given().spec(requestSpec);
 		Response res = requestSpec.when().get();
-		Pet[] expectedResponse = res.as(Pet[].class);
+		PetInfo[] expectedResponse = res.as(PetInfo[].class);
 		Assert.assertEquals("Status Check Passed!", 200, res.getStatusCode());
 		return expectedResponse;
 	}

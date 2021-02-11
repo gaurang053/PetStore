@@ -6,13 +6,7 @@ import org.assertj.core.api.SoftAssertions;
 import org.junit.Assert;
 import org.junit.runner.RunWith;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
 import com.serene.tests.features.pojo.store.StoreInfo;
-import com.serene.tests.features.pojo.users.UserInfo;
-import com.serene.tests.features.steps.generic.APIRequestBuilder;
-import com.serene.tests.features.steps.generic.LoginAPISteps;
-import com.serene.tests.features.steps.generic.StepDefn;
 import com.serene.tests.features.steps.generic.StoreAPISteps;
 
 import cucumber.api.java.After;
@@ -20,16 +14,13 @@ import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import groovy.json.JsonParser;
 import io.restassured.RestAssured;
-import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
-import io.restassured.specification.RequestSpecification;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Steps;
 
 @RunWith(SerenityRunner.class)
-public class StoreStepDefn implements StepDefn{
+public class StoreStepDefn {
 	
 	private Response res = null; // Response
 	private SoftAssertions softAssertion = null;

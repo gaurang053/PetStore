@@ -4,16 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.assertj.core.api.SoftAssertions;
-import org.jruby.ir.operands.Array;
-import org.junit.Assert;
 import org.junit.runner.RunWith;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
 import com.serene.tests.features.pojo.users.UserInfo;
-import com.serene.tests.features.pojo.users.UserResponse;
 import com.serene.tests.features.steps.generic.APIRequestBuilder;
 import com.serene.tests.features.steps.generic.LoginAPISteps;
 
@@ -24,7 +17,6 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import io.restassured.RestAssured;
-import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import net.serenitybdd.junit.runners.SerenityRunner;
@@ -33,7 +25,6 @@ import net.thucydides.core.annotations.Steps;
 @RunWith(SerenityRunner.class)
 public class CreateMultiUserStepDefin {
 	private Response res = null; // Response
-	private JsonPath jp = null; // JsonPath
 	private RequestSpecification requestSpec = null;
 	private UserInfo user1 = null;
 	private UserInfo user2 = null;

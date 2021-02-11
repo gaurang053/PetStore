@@ -6,10 +6,10 @@ import org.assertj.core.api.SoftAssertions;
 import org.junit.Assert;
 import org.junit.runner.RunWith;
 
-import com.serene.tests.features.pojo.petProfile.Pet;
-import com.serene.tests.features.pojo.petProfile.PetAPIResponse;
+import com.serene.tests.features.pojo.pet.PetAPIResponse;
+import com.serene.tests.features.pojo.pet.PetInfo;
 import com.serene.tests.features.steps.generic.PetAPISteps;
-import com.serene.tests.features.steps.generic.StepDefn;
+
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
@@ -21,12 +21,12 @@ import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Steps;
 
 @RunWith(SerenityRunner.class)
-public class PetProfileStepDefn implements StepDefn {
+public class PetProfileStepDefn {
 
 	private Response res = null; // Response
 	private SoftAssertions softAssertion = null;
 	private static String petUrl = null;
-	private Pet petInfo = null;
+	private PetInfo petInfo = null;
 
 	@Before
 	public void setup() {
@@ -48,13 +48,13 @@ public class PetProfileStepDefn implements StepDefn {
 		PetProfileStepDefn.petUrl = url;
 		this.petInfo = petAPISteps.createPetClass(petData);
 		this.res = petAPISteps.createPetRequest(PetProfileStepDefn.petUrl, this.petInfo);
-		Pet petResponse = petAPISteps.validatePetInfoIsAdded(this.res);
+		PetInfo petResponse = petAPISteps.validatePetInfoIsAdded(this.res);
 		petAPISteps.comparePetInfo(softAssertion, this.petInfo, petResponse);
 	}
 
 	@When("^I add new pet, it shoud be avilable to serach with pet by ID \"([^\"]*)\"$")
 	public void i_add_new_pet_it_shoud_be_avilable_to_serach_with_pet_by_ID(String petId) {
-		Pet petResponse = petAPISteps.fetchPetInfoById(PetProfileStepDefn.petUrl, petId);
+		PetInfo petResponse = petAPISteps.fetchPetInfoById(PetProfileStepDefn.petUrl, petId);
 		petAPISteps.comparePetInfo(softAssertion, this.petInfo, petResponse);
 	}
 
@@ -84,17 +84,17 @@ public class PetProfileStepDefn implements StepDefn {
 
 	@When("^Once, the profile created, I can update the Pet data \"([^\"]*)\" and Validate$")
 	public void once_the_profile_created_I_can_update_the_Pet_data_and_Validate(List<String> petDataToBeUpdated) {
-		Pet toBeUpdated = petAPISteps.createPetClass(petDataToBeUpdated);
-		Pet actualResponse = petAPISteps.updatePetRequest(PetProfileStepDefn.petUrl, toBeUpdated);
+		PetInfo toBeUpdated = petAPISteps.createPetClass(petDataToBeUpdated);
+		PetInfo actualResponse = petAPISteps.updatePetRequest(PetProfileStepDefn.petUrl, toBeUpdated);
 		petAPISteps.comparePetInfo(softAssertion, toBeUpdated, actualResponse);
 	}
 
 	@Then("^I can view pet info by status and validate if updated pet profile with \"([^\"]*)\" exists$")
 	public void i_can_view_pet_info_by_status_and_validate_if_updated_pet_profile_exists(List<String> petStatus) {
 		String param = petStatus.get(0).replace("&", "&status=");
-		Pet[] petResponse = petAPISteps
+		PetInfo[] petResponse = petAPISteps
 				.findPetInfoByStatus(PetProfileStepDefn.petUrl + "/findByStatus?status=" + param);
-		for (Pet petProfile : petResponse) {
+		for (PetInfo petProfile : petResponse) {
 			if (petProfile.getId().equals(Integer.parseInt(petStatus.get(0)))) {
 				Assert.assertEquals("Verify Pet Status!", petProfile.getStatus(), petStatus.get(1));
 			}

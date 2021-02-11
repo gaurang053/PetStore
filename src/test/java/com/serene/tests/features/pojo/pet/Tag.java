@@ -1,6 +1,6 @@
-package com.serene.tests.features.pojo.petProfile;
+package com.serene.tests.features.pojo.pet;
 
-public class Category {
+public class Tag {
 	private Integer id;
 	private String name;
 
@@ -8,7 +8,7 @@ public class Category {
 	 * No args constructor for use in serialization
 	 *
 	 */
-	public Category() {
+	public Tag() {
 	}
 
 	/**
@@ -16,7 +16,7 @@ public class Category {
 	 * @param name
 	 * @param id
 	 */
-	public Category(Integer id, String name) {
+	public Tag(Integer id, String name) {
 		super();
 		this.id = id;
 		this.name = name;
