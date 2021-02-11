@@ -3,8 +3,8 @@
 Testing REST services in Java
 Techonlogy used - Serenity, REST Assured, Cucumber and JAVA
 
-# What you need to start
-* JAVA 8
+# Prerequisite
+* JAVA 8 or higher
 * As Integrated Development Environment - Used Eclipse Version: 2020-12 (4.18.0)
 * A Buid Tool - Used Maven
 
@@ -12,8 +12,8 @@ Techonlogy used - Serenity, REST Assured, Cucumber and JAVA
 * Clone this repository - gh repo clone gaurang053/petStore
 
 # How to execute this project?
-* Double click on execute.bat file present at root or Execute maven command - mvn clean verify or 
-
+* Double click on execute.bat file present at root  or 
+* or Execute maven command - mvn clean verify
 # Description
 Pet store is Serenity based REST API Automation project. As part of development, Below list of high level story design to cover all APIs present in the swagger. Swagger URL# https://petstore.swagger.io/#/pet/updatePet
 	
