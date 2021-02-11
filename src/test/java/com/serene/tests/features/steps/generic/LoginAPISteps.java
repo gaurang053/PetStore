@@ -12,34 +12,39 @@ import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
+import net.thucydides.core.annotations.Reported;
 import net.thucydides.core.annotations.Step;
 
 public class LoginAPISteps {
 	
 	@Step
-	public RequestSpecification givenUserDetails(String username, String password) {
-		String urlPath = "/user/login?username=" + username + "&password=" + password;
+	public RequestSpecification givenUserDetails(String urlPath, String username, String password) {
+		
 		APIRequestBuilder apiRequestBuilder = new APIRequestBuilder(urlPath,"application/json",null);
 		return RestAssured.given().spec(apiRequestBuilder.getRequestSpecification());
 
 	}
-
-	@Step
+	
 	public Response postLoginRequest(RequestSpecification requestSpec) {
 		Response res = requestSpec.when().get();
 		return res;
 	}
 
 	@Step
-	public void verifyLoginSuccess(Response res, String username, String password) {
+	public String verifyLoginSuccess(Response res, String username, String password) {
 		JsonPath jp = res.jsonPath();
 		Assert.assertEquals("Status Check Failed!", 200, res.getStatusCode());
 		Assert.assertTrue(jp.get("message").toString().contains("logged in user session:"));
+		return "Status check passed > Response "+ res.getStatusCode();
 	}
 	
-	public void verifyLogoutSuccess(Response res, String username, String password) {
-		// TODO Auto-generated method stub
-		
+	@Step
+	public UserAPIResponse verifyLogoutSuccess(String urlPath) {
+		APIRequestBuilder apiRequestBuilder = new APIRequestBuilder(urlPath,"application/json",null);
+		RequestSpecification requestSpec = RestAssured.given().spec(apiRequestBuilder.getRequestSpecification());
+		Response res =  requestSpec.when().get();
+		UserAPIResponse response =res.as(UserAPIResponse.class);
+		return response;
 	}
 
 	@Step

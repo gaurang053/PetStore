@@ -1,8 +1,9 @@
 package com.serene.tests.features.steps.stepDefinition;
 
+import org.junit.Assert;
 import org.junit.runner.RunWith;
 
-import com.serene.tests.features.pojo.users.UserInfo;
+import com.serene.tests.features.pojo.users.UserAPIResponse;
 import com.serene.tests.features.steps.generic.LoginAPISteps;
 
 import cucumber.api.java.After;
@@ -11,7 +12,6 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import io.restassured.RestAssured;
-import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import net.serenitybdd.core.Serenity;
@@ -20,11 +20,8 @@ import net.thucydides.core.annotations.Steps;
 
 @RunWith(SerenityRunner.class)
 public class LoginStepDefn{
-	public Response res = null; //Response
-    public JsonPath jp = null; //JsonPath
-    public RequestSpecification requestSpec = null;
-    public UserInfo newUser = null;
-    
+	private Response res = null; //Response
+    private RequestSpecification requestSpec = null;
     @Before
 	public void setup()
 	{
@@ -42,38 +39,49 @@ public class LoginStepDefn{
 	
 	@Given("^I provide login credentials \"([^\"]*)\" and \"([^\"]*)\"$")
 	public void i_provide_login_credentials_and(String username, String password){
+		//GET URL Path
+		String urlPath = "/user/login?username=" + username + "&password=" + password;
+		//Add user name and password into session variable 
 		Serenity.setSessionVariable("username").to(username);
 		Serenity.setSessionVariable("password").to(password);
-		requestSpec = loginAPI.givenUserDetails(username,password);
+		//This method call APIRequestBuilder and 
+		this.requestSpec = loginAPI.givenUserDetails(urlPath, username,password);
 	}
 
 
 	@When("^I send request to login$")
 	public void i_send_request_to_login() {
-	    // Write code here that turns the phrase above into concrete actions
-		res = loginAPI.postLoginRequest(requestSpec);
+	    //Call Post method
+		this.res = loginAPI.postLoginRequest(this.requestSpec);
 	}
 
 	@Then("^login failed$")
 	public void login_failed() {
+		//Fetch user name and password from session variable
 		String username = Serenity.sessionVariableCalled("username").toString();
 		String password = Serenity.sessionVariableCalled("password").toString();
-		loginAPI.verifyLoginFailure(res, username,password);
+		//Verify login failure
+		loginAPI.verifyLoginFailure(this.res, username,password);
 	}
 
 	@Then("^login is successful$")
 	public void login_is_successful() {
+		//Fetch user name and password from session variable
 		String username = Serenity.sessionVariableCalled("username").toString();
 		String password = Serenity.sessionVariableCalled("password").toString();
+		//Verify login success
 		loginAPI.verifyLoginSuccess(res, username,password);
 	}
 	
 	@Then("^logout is successful$")
 	public void logout_is_successful() {
-	    // Write code here that turns the phrase above into concrete actions
-		String username = Serenity.sessionVariableCalled("username").toString();
-		String password = Serenity.sessionVariableCalled("password").toString();
-		loginAPI.verifyLogoutSuccess(res, username,password);
+		//GET URL Path
+		String urlPath = "/user/logout";
+		//Verify logout successful
+		UserAPIResponse expectedResponse= loginAPI.verifyLogoutSuccess(urlPath);
+		Assert.assertEquals("Status Check Passed!", "200", expectedResponse.getCode().toString());
+		Assert.assertNotNull("type field in response is not empty", expectedResponse.getType());
+		Assert.assertEquals("Message return id", "ok", expectedResponse.getMessage());
 	}
 	
 

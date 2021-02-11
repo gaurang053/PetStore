@@ -17,5 +17,3 @@ Feature: User - Operations about users
   Examples: Valid
   			|userData|firstname|lastname|email|changepassword|phoneNumber|userName|
 		  	|20,testuser,firstname,lastname,testuser@gmail.com,test123,123456789,0|pet|store|petstore@gmail.com|test1234|987654321|testuser|
-    
-    
