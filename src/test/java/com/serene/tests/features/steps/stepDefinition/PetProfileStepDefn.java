@@ -10,8 +10,6 @@ import com.serene.tests.features.pojo.petProfile.Pet;
 import com.serene.tests.features.pojo.petProfile.PetAPIResponse;
 import com.serene.tests.features.steps.generic.PetAPISteps;
 import com.serene.tests.features.steps.generic.StepDefn;
-import com.serene.tests.features.steps.generic.StoreAPISteps;
-
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
@@ -60,8 +58,8 @@ public class PetProfileStepDefn implements StepDefn{
 		petAPISteps.comparePetInfo(softAssertion, this.petInfo, petResponse);
 	}
 
-	@Then("^I update upload the an image using \"([^\"]*)\" with \"([^\"]*)\"$")
-	public void i_update_upload_the_an_image_using(String petId,String image) {
+	@Then("^I upload a pet image \"([^\"]*)\" by \"([^\"]*)\"$")
+	public void i_upload_a_pet_image_using(String petId,String image) {
 		String dir = System.getProperty("user.dir");
 		PetAPIResponse expectedResponse = petAPISteps.uploadImageOfPetById(dir+image, PetProfileStepDefn.petUrl,petId);
 		Assert.assertEquals("Status Check Passed!", "200", expectedResponse.getCode().toString());	

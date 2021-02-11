@@ -1,11 +1,11 @@
-Feature: Pet Information -
+Feature: Pet - Everything about Pets
 
-	Owner of pet shope can maintain the pet store information 
+	Pet - Everything about Pets 
 
-	Scenario Outline:  As a owner I would like add, update, delete and serach pet information
+	Scenario Outline:  As a pet shop owner, I would like add new pet profile, upload pet image and delete pet profile
     Given As a owner I would add new pet "<petData>" to the store with url "<url>"
     When I add new pet, it shoud be avilable to serach with pet by ID "<petId>"
-    Then I update upload the an image using "<petId>" with "<image>"
+    Then I upload a pet image "<image>" by "<petId>" 
     And I can delete the pet profile by id "<petId>" 
  
   Examples: Valid
