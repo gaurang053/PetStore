@@ -15,7 +15,7 @@ Techonlogy used - Serenity, REST Assured, Cucumber and JAVA
 * Double click on execute.bat file present at root or Execute maven command - mvn clean verify or 
 
 # Description
-	Pet store is Serenity based REST API Automation project. As part of development, Below list of high level story design to cover all APIs present in the swagger. Swagger URL# https://petstore.swagger.io/#/pet/updatePet
+Pet store is Serenity based REST API Automation project. As part of development, Below list of high level story design to cover all APIs present in the swagger.<br /> Swagger URL# https://petstore.swagger.io/#/pet/updatePet
 	
 * User - Operations about users 
 ```
