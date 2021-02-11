@@ -94,4 +94,33 @@ public class PetAPISteps {
 		return expectedResponse;
 	}
 
+	public Pet updatePetRequest(String petUrl, Pet toBeUpdated) {
+		APIRequestBuilder apiRequestBuilder = new APIRequestBuilder(petUrl,"application/json",toBeUpdated);
+		RequestSpecification requestSpec = apiRequestBuilder.getRequestSpecification();
+		requestSpec = RestAssured.given().spec(requestSpec);
+		Response res = requestSpec.when().put();
+		Pet expectedResponse = res.as(Pet.class);
+		Assert.assertEquals("Status Check Passed!", 200, res.getStatusCode());
+		return expectedResponse;
+	}
+
+	public Pet[] findPetInfoByStatus(String petUrl) {
+		APIRequestBuilder apiRequestBuilder = new APIRequestBuilder(petUrl,"application/json",null);
+		RequestSpecification requestSpec = apiRequestBuilder.getRequestSpecification();
+		requestSpec = RestAssured.given().spec(requestSpec);
+		Response res = requestSpec.when().get();
+		Pet[] expectedResponse = res.as(Pet[].class);
+		Assert.assertEquals("Status Check Passed!", 200, res.getStatusCode());
+		return expectedResponse;
+	}
+	
+	public PetAPIResponse updatePetDataWithFormData(String url, String formData) {
+		APIRequestBuilder apiRequestBuilder = new APIRequestBuilder(url, "application/x-www-form-urlencoded", formData);
+		RequestSpecification requestSpec = apiRequestBuilder.getRequestSpecification();
+		requestSpec = RestAssured.given().spec(requestSpec);
+		Response res = requestSpec.when().post();
+		Assert.assertEquals("Status Check Passed!", 200, res.getStatusCode());	
+		return res.as(PetAPIResponse.class);
+		
+	}
 }

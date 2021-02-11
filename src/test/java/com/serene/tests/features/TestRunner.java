@@ -7,7 +7,7 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-		features = "src/test/resources/features", plugin = {"pretty"}
+		features = "src/test/resources/features/", plugin = {"pretty"}
 		)
 public class TestRunner {
 }
