@@ -1,0 +1,4 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"User - Operations about users","As a Admin User, I can create multiple user with Array","SUCCESS","2021-02-12T12:21:43.865+01:00[Europe/Berlin]","0.0","2.14"
+"User - Operations about users","As a Admin User, I can create multiple user with List","SUCCESS","2021-02-12T12:21:46.011+01:00[Europe/Berlin]","0.0","2.21"
+"User - Operations about users","As a Admin User, I can create new user, view, update, delete the existing user","SUCCESS","2021-02-12T12:21:48.227+01:00[Europe/Berlin]","0.0","12.2"

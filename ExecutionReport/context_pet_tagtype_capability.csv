@@ -1,2 +1,3 @@
 "Story","Title","Result","Date","Stability","Duration (s)"
-"Pet Information -","As a owner I would like add, update, delete and serach pet information","SUCCESS","2021-02-11T11:06:15.44+01:00[Europe/Berlin]","0.0","7.94"
+"Pet - Everything about Pets","As a Store Owner, I would like add new pet profile, upload pet image and delete pet profile","SUCCESS","2021-02-12T12:23:02.351+01:00[Europe/Berlin]","0.0","4.37"
+"Pet - Everything about Pets","As a Store Owner, I would like add update pet profile, view pet info by status or create new pet profile with form data","SUCCESS","2021-02-12T12:23:06.721+01:00[Europe/Berlin]","0.0","2.91"

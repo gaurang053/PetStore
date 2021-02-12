@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="3" name="User - Operations about users - Login &amp; Logout" skipped="0" tests="4" time="10.12" timestamp="2021-02-12 12:21:22"><testcase name="As a End User, A Unauthorized user can not login to the application using API"><failure message="Invalid user credentials allowed expected:&lt;401&gt; but was:&lt;200&gt;" type="java.lang.AssertionError">Invalid user credentials allowed expected:&lt;401&gt; but was:&lt;200&gt;</failure><system-err>Invalid user credentials allowed expected:&lt;401&gt; but was:&lt;200&gt;&#13;
+com.serene.tests.features.steps.generic.LoginAPISteps.verifyLoginFailure(LoginAPISteps.java:55)&#13;
+com.serene.tests.features.steps.stepDefinition.LoginStepDefn.login_failed(LoginStepDefn.java:64)&#13;
+✽.login failed(src/test/resources/features/Login/Login.feature:8)&#13;
+</system-err></testcase><testcase name="As a End User, A Valid user with wrong password can not login to the application using API"><failure message="Invalid user credentials allowed expected:&lt;401&gt; but was:&lt;200&gt;" type="java.lang.AssertionError">Invalid user credentials allowed expected:&lt;401&gt; but was:&lt;200&gt;</failure><system-err>Invalid user credentials allowed expected:&lt;401&gt; but was:&lt;200&gt;&#13;
+com.serene.tests.features.steps.generic.LoginAPISteps.verifyLoginFailure(LoginAPISteps.java:55)&#13;
+com.serene.tests.features.steps.stepDefinition.LoginStepDefn.login_failed(LoginStepDefn.java:64)&#13;
+✽.login failed(src/test/resources/features/Login/Login.feature:17)&#13;
+</system-err></testcase><testcase name="As a End User, A Unauthorized user with valid password can not login to the application using API"><failure message="Invalid user credentials allowed expected:&lt;401&gt; but was:&lt;200&gt;" type="java.lang.AssertionError">Invalid user credentials allowed expected:&lt;401&gt; but was:&lt;200&gt;</failure><system-err>Invalid user credentials allowed expected:&lt;401&gt; but was:&lt;200&gt;&#13;
+com.serene.tests.features.steps.generic.LoginAPISteps.verifyLoginFailure(LoginAPISteps.java:55)&#13;
+com.serene.tests.features.steps.stepDefinition.LoginStepDefn.login_failed(LoginStepDefn.java:64)&#13;
+✽.login failed(src/test/resources/features/Login/Login.feature:26)&#13;
+</system-err></testcase><testcase name="As a End User, A Valid user can login and logout to the application using API"/></testsuite>

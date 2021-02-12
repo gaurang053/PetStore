@@ -49,10 +49,10 @@
     <script class="code" type="text/javascript">$(document).ready(function () {
         var plot1 = $.jqplot('coverage_pie_chart', [
             [
-                ['Passing', 0],
+                ['Passing', 1],
                 ['Pending', 0],
                 ['Ignored', 0],
-                ['Failing', 1],
+                ['Failing', 0],
                 ['Errors',  0],
                 ['Compromised',  0],
                 ['Untested',  0],
@@ -82,10 +82,10 @@
                 marginTop: '15px'
             },
             series: [
-                {label: '0 requirements tested successfully'},
+                {label: '1 requirements tested successfully'},
                 {label: '0 requirements pending'},
                 {label: '0} requirements skipped'},
-                {label: '1} requirements with failures'},
+                {label: '0} requirements with failures'},
                 {label: '0} requirements with errors'},
                 {label: '0} requirements compromised'},
                 {label: '0} requirements untested'},
@@ -185,7 +185,7 @@
             <a href="requirement_type_feature.html"><i class="fa fa-comments-o"></i> Features</a>
         </li>
     </ul>
-    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 11-02-2021 11:06</span>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 12-02-2021 12:23</span>
     <br style="clear:left"/>
 </div>
 
@@ -224,8 +224,8 @@
                                         <td class="summary-leading-column"><a
                                                 href="#requirements-tabs">Features</a></td>
                                         <td>1</td>
-                                        <td>0</td>
                                         <td>1</td>
+                                        <td>0</td>
                                         <td>0</td>
                                         <td>0</td>
                                     </tr>
@@ -234,8 +234,8 @@
                                     <td class="summary-leading-column"><a href="#test-results-table">Acceptance Criteria
                                         (tests)</a></td>
                                     <td>3</td>
-                                    <td>2</td>
-                                    <td>1</td>
+                                    <td>3</td>
+                                    <td>0</td>
                                     <td>0</td>
                                     <td>0</td>
                                     <td></td>
@@ -265,8 +265,8 @@
         <tr>
             <td class="summary-leading-column">Automated</td>
             <td>3</td>
-            <td>2 (67%)</td>
-            <td>1 (33%)</td>
+            <td>3 (100%)</td>
+            <td>0 (0%)</td>
             <td>0 (0%)</td>
             <td>0 (0%)</td>
         </tr>
@@ -281,14 +281,14 @@
         <tr>
             <td class="summary-leading-column">Total</td>
             <td>3</td>
-            <td>2 (67%)</td>
-            <td>1 (33%)</td>
+            <td>3 (100%)</td>
+            <td>0 (0%)</td>
             <td>0 (0%)</td>
             <td>0 (0%)</td>
         </tr>
         <tr>
             <td class="summary-leading-column">Total Duration</td>
-                <td colspan="5">32 seconds</td>
+                <td colspan="5">18 seconds</td>
         </tr>
         </body>
     </table>
@@ -324,20 +324,20 @@
 
 
 
-                <tr class="test-FAILURE requirementRow">
+                <tr class="test-SUCCESS requirementRow">
                     <td class="requirementRowCell">
-                        <span class="status_icon"><i class='fa fa-times-circle failure-icon ' title='FAILURE'></i></span>
-                        <span style="display:none">3</span>
+                        <span class="status_icon"><i class='fa fa-check-square-o success-icon ' title='SUCCESS'></i></span>
+                        <span style="display:none">1</span>
                     </td>
                     <td class="cardNumber requirementRowCell"></td>
 
-                    <td class="FAILURE-text requirementRowCell">
+                    <td class="SUCCESS-text requirementRowCell">
                         <a href="javaScript:void(0)" class="read-more-link">
                             <img src="images/plus.png" height="16"/></a>
                         <span class="requirementName"><a
-                                href="feature_user_sl_user.html">User</a></span>
+                                href="feature_user_sl_user___operations_about_users.html">User - Operations about users</a></span>
 
-                        <div class="requirementNarrative read-more-text"><pre><code>I should be able to create new user as a Array or List
+                        <div class="requirementNarrative read-more-text"><pre><code>As a Admin User, I can create multiple user either using Array or List
 </code></pre>
 </div>
                     </td>
@@ -345,9 +345,9 @@
 
                     <td class="greentext highlighted-value requirementRowCell">3</td>
 <!--
-                    <td class="greentext requirementRowCell">2</td>
+                    <td class="greentext requirementRowCell">3</td>
                     <td class="bluetext requirementRowCell">0</td>
-                    <td class="redtext requirementRowCell">1</td>
+                    <td class="redtext requirementRowCell">0</td>
                     <td class="lightorangetext requirementRowCell">0</td>
                     <td class="violettext requirementRowCell">0</td>
 -->
@@ -365,13 +365,13 @@
 <table>
     <tr>
         <td width="40px">
-            <div class="small">66.7%</div>
+            <div class="small">100%</div>
         </td>
         <td width="125px">
             <div class="percentagebar"
                  title="  - Total tests: 3
-  - Passing tests: 2 (66.7%)
-  - Failing tests: 1 (33.3%)
+  - Passing tests: 3 (100%)
+  - Failing tests: 0 (0%)
   - Tests with errors: 0 (0%)
   - Compromised tests 0 (0%)
   - Pending tests: 0 (0%)
@@ -379,8 +379,8 @@
                  style="width: 125px;">
                 <div class="pendingbar"
                      title="  - Total tests: 3
-  - Passing tests: 2 (66.7%)
-  - Failing tests: 1 (33.3%)
+  - Passing tests: 3 (100%)
+  - Failing tests: 0 (0%)
   - Tests with errors: 0 (0%)
   - Compromised tests 0 (0%)
   - Pending tests: 0 (0%)
@@ -389,8 +389,8 @@
                     <div class="ignoredbar"
                          style="width: 125px;"
                          title="  - Total tests: 3
-  - Passing tests: 2 (66.7%)
-  - Failing tests: 1 (33.3%)
+  - Passing tests: 3 (100%)
+  - Failing tests: 0 (0%)
   - Tests with errors: 0 (0%)
   - Compromised tests 0 (0%)
   - Pending tests: 0 (0%)
@@ -398,8 +398,8 @@
                         <div class="compromisedbar"
                              style="width: 125px;"
                              title="  - Total tests: 3
-  - Passing tests: 2 (66.7%)
-  - Failing tests: 1 (33.3%)
+  - Passing tests: 3 (100%)
+  - Failing tests: 0 (0%)
   - Tests with errors: 0 (0%)
   - Compromised tests 0 (0%)
   - Pending tests: 0 (0%)
@@ -407,8 +407,8 @@
                             <div class="errorbar"
                                  style="width: 125px;"
                                  title="  - Total tests: 3
-  - Passing tests: 2 (66.7%)
-  - Failing tests: 1 (33.3%)
+  - Passing tests: 3 (100%)
+  - Failing tests: 0 (0%)
   - Tests with errors: 0 (0%)
   - Compromised tests 0 (0%)
   - Pending tests: 0 (0%)
@@ -416,17 +416,17 @@
                                 <div class="failingbar"
                                      style="width: 125px;"
                                      title="  - Total tests: 3
-  - Passing tests: 2 (66.7%)
-  - Failing tests: 1 (33.3%)
+  - Passing tests: 3 (100%)
+  - Failing tests: 0 (0%)
   - Tests with errors: 0 (0%)
   - Compromised tests 0 (0%)
   - Pending tests: 0 (0%)
   - Ignored or skipped tests: 0 (0%)">
                                     <div class="passingbar"
-                                         style="width: 83px;"
+                                         style="width: 125px;"
                                          title="  - Total tests: 3
-  - Passing tests: 2 (66.7%)
-  - Failing tests: 1 (33.3%)
+  - Passing tests: 3 (100%)
+  - Failing tests: 0 (0%)
   - Tests with errors: 0 (0%)
   - Compromised tests 0 (0%)
   - Pending tests: 0 (0%)
@@ -477,9 +477,9 @@
                                 <td class="SUCCESS-text">
                                     <div class="ellipsis">
 
-                                        <a href="user_create-no-of-user-in-a-one-request-with-array.html" class="ellipsis"
-                                           title="Create no of user in a one request with Array ">
-                                            Create no of user in a one request with Array&nbsp;(1  examples)
+                                        <a href="user---operations-about-users_as-a-admin-user--i-can-create-multiple-user-with-array.html" class="ellipsis"
+                                           title="As a Admin User, I can create multiple user with Array ">
+                                            As a Admin User, I can create multiple user with Array&nbsp;(1  examples)
                                                 <span class="related-issue-title"></span>
                                         </a>
                                     </div>
@@ -488,9 +488,9 @@
                                 <td class="SUCCESS-text">10</td>
 
 
-                                <td class="SUCCESS-text" data-sort="2021-02-11 11:06:23">11:06:23</td>
+                                <td class="SUCCESS-text" data-sort="2021-02-12 12:23:13">12:23:13</td>
 
-                                <td class="SUCCESS-text">3.67</td>
+                                <td class="SUCCESS-text">2.41</td>
                             </tr>
 
                             <tr class="test-SUCCESS">
@@ -500,9 +500,9 @@
                                 <td class="SUCCESS-text">
                                     <div class="ellipsis">
 
-                                        <a href="user_create-no-of-user-in-a-one-request-with-list.html" class="ellipsis"
-                                           title="Create no of user in a one request with list ">
-                                            Create no of user in a one request with list&nbsp;(1  examples)
+                                        <a href="user---operations-about-users_as-a-admin-user--i-can-create-multiple-user-with-list.html" class="ellipsis"
+                                           title="As a Admin User, I can create multiple user with List ">
+                                            As a Admin User, I can create multiple user with List&nbsp;(1  examples)
                                                 <span class="related-issue-title"></span>
                                         </a>
                                     </div>
@@ -511,32 +511,32 @@
                                 <td class="SUCCESS-text">10</td>
 
 
-                                <td class="SUCCESS-text" data-sort="2021-02-11 11:06:27">11:06:27</td>
+                                <td class="SUCCESS-text" data-sort="2021-02-12 12:23:16">12:23:16</td>
 
-                                <td class="SUCCESS-text">3.59</td>
+                                <td class="SUCCESS-text">2.22</td>
                             </tr>
 
-                            <tr class="test-FAILURE">
-                                <td><span class="summary-icon"><i class='fa fa-times-circle failure-icon ' title='FAILURE'></i></span>
+                            <tr class="test-SUCCESS">
+                                <td><span class="summary-icon"><i class='fa fa-check-square-o success-icon ' title='SUCCESS'></i></span>
                                     
-                                    <span style="display:none">FAILURE</span></td>
-                                <td class="FAILURE-text">
+                                    <span style="display:none">SUCCESS</span></td>
+                                <td class="SUCCESS-text">
                                     <div class="ellipsis">
 
-                                        <a href="user_create--update--delete-and-fetch-user-information.html" class="ellipsis"
-                                           title="Create, Update, Delete and Fetch user information Assertion error: The following 6 asse...">
-                                            Create, Update, Delete and Fetch user information&nbsp;(1  examples)
+                                        <a href="user---operations-about-users_as-a-admin-user--i-can-create-new-user--view--update--delete-the-existing-user.html" class="ellipsis"
+                                           title="As a Admin User, I can create new user, view, update, delete the existing user ">
+                                            As a Admin User, I can create new user, view, update, delete the existing user&nbsp;(1  examples)
                                                 <span class="related-issue-title"></span>
                                         </a>
                                     </div>
                                 </td>
 
-                                <td class="FAILURE-text">36</td>
+                                <td class="SUCCESS-text">36</td>
 
 
-                                <td class="FAILURE-text" data-sort="2021-02-11 11:06:30">11:06:30</td>
+                                <td class="SUCCESS-text" data-sort="2021-02-12 12:23:18">12:23:18</td>
 
-                                <td class="FAILURE-text">24.4</td>
+                                <td class="SUCCESS-text">13.44</td>
                             </tr>
                         </tbody>
                     </table>

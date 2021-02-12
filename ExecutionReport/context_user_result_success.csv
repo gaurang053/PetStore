@@ -1,3 +1,4 @@
 "Story","Title","Result","Date","Stability","Duration (s)"
-"User","Create no of user in a one request with Array","SUCCESS","2021-02-11T11:06:23.386+01:00[Europe/Berlin]","0.0","3.67"
-"User","Create no of user in a one request with list","SUCCESS","2021-02-11T11:06:27.054+01:00[Europe/Berlin]","0.0","3.59"
+"User - Operations about users","As a Admin User, I can create multiple user with Array","SUCCESS","2021-02-12T12:23:13.876+01:00[Europe/Berlin]","0.0","2.41"
+"User - Operations about users","As a Admin User, I can create multiple user with List","SUCCESS","2021-02-12T12:23:16.292+01:00[Europe/Berlin]","0.0","2.22"
+"User - Operations about users","As a Admin User, I can create new user, view, update, delete the existing user","SUCCESS","2021-02-12T12:23:18.514+01:00[Europe/Berlin]","0.0","13.44"

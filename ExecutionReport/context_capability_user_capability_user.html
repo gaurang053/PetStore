@@ -53,13 +53,13 @@
     <script class="code" type="text/javascript">$(document).ready(function () {
         var test_results_plot = $.jqplot('test_results_pie_chart', [
             [
-                ['Passing', 0.666667],
+                ['Passing', 1],
                 
                 ['Pending', 0],
                 
                 ['Ignored/Skipped', 0],
                 
-                ['Failing', 0.333333],
+                ['Failing', 0],
                 
                 ['Errors',  0],
                 ['Compromised',  0]
@@ -92,10 +92,10 @@
                 marginTop: '15px'
             },
             series: [
-                {label: '2 / 3 tests passed' },
+                {label: '3 / 3 tests passed' },
                 {label: '0 / 3 tests pending'},
                 {label: '0 / 3 tests not executed'},
-                {label: '1 / 3 tests failed'},
+                {label: '0 / 3 tests failed'},
                 {label: '0 / 3 errors'},
                 {label: '0 / 3 compromised tests'}
             ]
@@ -103,13 +103,13 @@
 
         var weighted_test_results_plot = $.jqplot('weighted_test_results_pie_chart', [
             [
-                ['Passing', 0.357143],
+                ['Passing', 1],
                 
                 ['Pending', 0],
                 
                 ['Ignored', 0],
                 
-                ['Failing', 0.642857],
+                ['Failing', 0],
                 
                 ['Errors', 0],
                 ['Compromised', 0],
@@ -143,10 +143,10 @@
                 marginTop: '15px'
             },
             series: [
-                {label: '2 / 3 tests passed (0.357143% of all test steps)' },
+                {label: '3 / 3 tests passed (1% of all test steps)' },
                 {label: '0 / 3 tests pending'},
                 {label: '0 / 3 tests not executed'},
-                {label: '1 / 3 tests failed (0.642857% of all test steps)'},
+                {label: '0 / 3 tests failed (0% of all test steps)'},
                 {label: '0 / 3 errors (0% of all test steps)'}
             ]
         });
@@ -219,7 +219,7 @@
             <a href="requirement_type_feature.html"><i class="fa fa-comments-o"></i> Features</a>
         </li>
     </ul>
-    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 11-02-2021 11:07</span>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 12-02-2021 12:23</span>
     <br style="clear:left"/>
 </div>
 <div class="clr"></div>
@@ -239,24 +239,10 @@
                 <div>
 
                     <span class="test-count"> |
-                        2
+                        3
                             <a href="context_capability_cl_user_result_success.html">passed</a>
                         
                     </span>
-                    <span class="test-count"> |
-                        1
-                            <a href="context_capability_cl_user_result_broken.html">unsuccessful</a>
-                        
-                    </span>(
-                    <span class="test-count">
-                        1
-                            <a href="context_capability_cl_user_result_failure.html">failed</a>
-                        ,
-                    </span>
-                    <span class="test-count">
-                        0
-errors
-                    </span>)
 
                 
 
@@ -308,8 +294,8 @@ errors
         <tr>
             <td class="summary-leading-column">Automated</td>
             <td>3</td>
-            <td>2 (67%)</td>
-            <td>1 (33%)</td>
+            <td>3 (100%)</td>
+            <td>0 (0%)</td>
             <td>0 (0%)</td>
             <td>0 (0%)</td>
         </tr>
@@ -324,14 +310,14 @@ errors
         <tr>
             <td class="summary-leading-column">Total</td>
             <td>3</td>
-            <td>2 (67%)</td>
-            <td>1 (33%)</td>
+            <td>3 (100%)</td>
+            <td>0 (0%)</td>
             <td>0 (0%)</td>
             <td>0 (0%)</td>
         </tr>
         <tr>
             <td class="summary-leading-column">Total Duration</td>
-                <td colspan="5">32 seconds</td>
+                <td colspan="5">18 seconds</td>
         </tr>
         </body>
     </table>
@@ -353,8 +339,8 @@ errors
             </tr>
                 <tr>
                     <td class="bluetext tag-title">
-                        <span class="FAILURE-text truncated-tag-title">
-                                <a href="context_capability_user_feature_user_sl_user.html" title="User">User</a>
+                        <span class="SUCCESS-text truncated-tag-title">
+                                <a href="context_capability_user_feature_user_sl_user___operations_about_users.html" title="User   Operations About Users">User   Operations About Users</a>
                         </span>
                     </td>
                     <td width="220px" class="table-figure">
@@ -362,9 +348,9 @@ errors
 
                         <table>
                             <tr>
-                                <td class="related-tag-percentage"><span title="2 out of 3 tests (20 steps) passing">66.7%</span></td>
+                                <td class="related-tag-percentage"><span title="3 out of 3 tests (56 steps) passing">100%</span></td>
                                 <td width="150px">
-                                    <a href="context_capability_user_feature_user_sl_user.html">
+                                    <a href="context_capability_user_feature_user_sl_user___operations_about_users.html">
                                         <div class="pendingbar"
                                              title="0 out of 3 tests (0 steps) pending"
                                              style="width: 150px;">
@@ -379,10 +365,10 @@ errors
                                                          title="0 out of 3 tests (0 steps) broken">
                                                         <div class="failingbar"
                                                              style="width: 150px;"
-                                                             title="1 out of 3 tests (36 steps) failing">
+                                                             title="0 out of 3 tests (0 steps) failing">
                                                             <div class="passingbar"
-                                                                 style="width: 100px;"
-                                                                 title="2 out of 3 tests (20 steps) passing">
+                                                                 style="width: 150px;"
+                                                                 title="3 out of 3 tests (56 steps) passing">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -439,8 +425,8 @@ errors
         <tr>
             <td class="summary-leading-column">Automated</td>
             <td>3</td>
-            <td>2 (67%)</td>
-            <td>1 (33%)</td>
+            <td>3 (100%)</td>
+            <td>0 (0%)</td>
             <td>0 (0%)</td>
             <td>0 (0%)</td>
         </tr>
@@ -455,14 +441,14 @@ errors
         <tr>
             <td class="summary-leading-column">Total</td>
             <td>3</td>
-            <td>2 (67%)</td>
-            <td>1 (33%)</td>
+            <td>3 (100%)</td>
+            <td>0 (0%)</td>
             <td>0 (0%)</td>
             <td>0 (0%)</td>
         </tr>
         <tr>
             <td class="summary-leading-column">Total Duration</td>
-                <td colspan="5">32 seconds</td>
+                <td colspan="5">18 seconds</td>
         </tr>
         </body>
     </table>
@@ -484,8 +470,8 @@ errors
             </tr>
                 <tr>
                     <td class="bluetext tag-title">
-                        <span class="FAILURE-text truncated-tag-title">
-                                <a href="context_capability_user_feature_user_sl_user.html" title="User">User</a>
+                        <span class="SUCCESS-text truncated-tag-title">
+                                <a href="context_capability_user_feature_user_sl_user___operations_about_users.html" title="User   Operations About Users">User   Operations About Users</a>
                         </span>
                     </td>
                     <td width="220px" class="table-figure">
@@ -493,9 +479,9 @@ errors
 
                         <table>
                             <tr>
-                                <td class="related-tag-percentage"><span title="2 out of 3 tests (20 steps) passing">35.7%</span></td>
+                                <td class="related-tag-percentage"><span title="3 out of 3 tests (56 steps) passing">100%</span></td>
                                 <td width="150px">
-                                    <a href="context_capability_user_feature_user_sl_user.html">
+                                    <a href="context_capability_user_feature_user_sl_user___operations_about_users.html">
                                         <div class="pendingbar"
                                              title="0 out of 3 tests (0 steps) pending"
                                              style="width: 150px;">
@@ -510,10 +496,10 @@ errors
                                                          title="0 out of 3 tests (0 steps) broken">
                                                         <div class="failingbar"
                                                              style="width: 150px;"
-                                                             title="1 out of 3 tests (36 steps) failing">
+                                                             title="0 out of 3 tests (0 steps) failing">
                                                             <div class="passingbar"
-                                                                 style="width: 54px;"
-                                                                 title="2 out of 3 tests (20 steps) passing">
+                                                                 style="width: 150px;"
+                                                                 title="3 out of 3 tests (56 steps) passing">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -565,9 +551,9 @@ errors
                                 <td class="SUCCESS-text">
                                     <div class="ellipsis">
 
-                                        <a href="user_create-no-of-user-in-a-one-request-with-array.html" class="ellipsis"
-                                           title="Create no of user in a one request with Array ">
-                                            Create no of user in a one request with Array&nbsp;(1  examples)
+                                        <a href="user---operations-about-users_as-a-admin-user--i-can-create-multiple-user-with-array.html" class="ellipsis"
+                                           title="As a Admin User, I can create multiple user with Array ">
+                                            As a Admin User, I can create multiple user with Array&nbsp;(1  examples)
                                                 <span class="related-issue-title"></span>
                                         </a>
                                     </div>
@@ -576,9 +562,9 @@ errors
                                 <td class="SUCCESS-text">10</td>
 
 
-                                <td class="SUCCESS-text" data-sort="2021-02-11 11:06:23">11:06:23</td>
+                                <td class="SUCCESS-text" data-sort="2021-02-12 12:23:13">12:23:13</td>
 
-                                <td class="SUCCESS-text">3.67</td>
+                                <td class="SUCCESS-text">2.41</td>
                             </tr>
 
                             <tr class="test-SUCCESS">
@@ -588,9 +574,9 @@ errors
                                 <td class="SUCCESS-text">
                                     <div class="ellipsis">
 
-                                        <a href="user_create-no-of-user-in-a-one-request-with-list.html" class="ellipsis"
-                                           title="Create no of user in a one request with list ">
-                                            Create no of user in a one request with list&nbsp;(1  examples)
+                                        <a href="user---operations-about-users_as-a-admin-user--i-can-create-multiple-user-with-list.html" class="ellipsis"
+                                           title="As a Admin User, I can create multiple user with List ">
+                                            As a Admin User, I can create multiple user with List&nbsp;(1  examples)
                                                 <span class="related-issue-title"></span>
                                         </a>
                                     </div>
@@ -599,32 +585,32 @@ errors
                                 <td class="SUCCESS-text">10</td>
 
 
-                                <td class="SUCCESS-text" data-sort="2021-02-11 11:06:27">11:06:27</td>
+                                <td class="SUCCESS-text" data-sort="2021-02-12 12:23:16">12:23:16</td>
 
-                                <td class="SUCCESS-text">3.59</td>
+                                <td class="SUCCESS-text">2.22</td>
                             </tr>
 
-                            <tr class="test-FAILURE">
-                                <td><span class="summary-icon"><i class='fa fa-times-circle failure-icon ' title='FAILURE'></i></span>
+                            <tr class="test-SUCCESS">
+                                <td><span class="summary-icon"><i class='fa fa-check-square-o success-icon ' title='SUCCESS'></i></span>
                                     
-                                    <span style="display:none">FAILURE</span></td>
-                                <td class="FAILURE-text">
+                                    <span style="display:none">SUCCESS</span></td>
+                                <td class="SUCCESS-text">
                                     <div class="ellipsis">
 
-                                        <a href="user_create--update--delete-and-fetch-user-information.html" class="ellipsis"
-                                           title="Create, Update, Delete and Fetch user information Assertion error: The following 6 asse...">
-                                            Create, Update, Delete and Fetch user information&nbsp;(1  examples)
+                                        <a href="user---operations-about-users_as-a-admin-user--i-can-create-new-user--view--update--delete-the-existing-user.html" class="ellipsis"
+                                           title="As a Admin User, I can create new user, view, update, delete the existing user ">
+                                            As a Admin User, I can create new user, view, update, delete the existing user&nbsp;(1  examples)
                                                 <span class="related-issue-title"></span>
                                         </a>
                                     </div>
                                 </td>
 
-                                <td class="FAILURE-text">36</td>
+                                <td class="SUCCESS-text">36</td>
 
 
-                                <td class="FAILURE-text" data-sort="2021-02-11 11:06:30">11:06:30</td>
+                                <td class="SUCCESS-text" data-sort="2021-02-12 12:23:18">12:23:18</td>
 
-                                <td class="FAILURE-text">24.4</td>
+                                <td class="SUCCESS-text">13.44</td>
                             </tr>
                         </tbody>
                     </table>

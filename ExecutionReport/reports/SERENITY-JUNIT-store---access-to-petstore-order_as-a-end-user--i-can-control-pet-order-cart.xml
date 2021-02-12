@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="Store - Access to Petstore order" skipped="0" tests="2" time="3.9" timestamp="2021-02-12 12:21:39"><testcase name="As a End User, I can control Pet Order Cart"/><testcase name="As a Store Owner, I would like to check my inventory"/></testsuite>

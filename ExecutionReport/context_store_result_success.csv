@@ -1,3 +1,3 @@
 "Story","Title","Result","Date","Stability","Duration (s)"
-"Store Information","As a user I would like to maintain my pet store order cart","SUCCESS","2021-02-11T11:06:55.045+01:00[Europe/Berlin]","0.0","5.64"
-"Store Information","As a store owner, I would like to check my inventory","SUCCESS","2021-02-11T11:07:00.683+01:00[Europe/Berlin]","0.0","2.02"
+"Store - Access to Petstore order","As a End User, I can control Pet Order Cart","SUCCESS","2021-02-12T12:23:09.63+01:00[Europe/Berlin]","0.0","3.36"
+"Store - Access to Petstore order","As a Store Owner, I would like to check my inventory","SUCCESS","2021-02-12T12:23:12.994+01:00[Europe/Berlin]","0.0","0.88"

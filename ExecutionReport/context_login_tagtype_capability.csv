@@ -1,3 +1,5 @@
 "Story","Title","Result","Date","Stability","Duration (s)"
-"Login & Logout","Unauthorized Login","FAILURE","2021-02-11T11:06:06.176+01:00[Europe/Berlin]","0.0","6.58"
-"Login & Logout","Successful Login and Logout","SUCCESS","2021-02-11T11:06:12.763+01:00[Europe/Berlin]","0.0","2.67"
+"User - Operations about users - Login & Logout","As a End User, A Unauthorized user can not login to the application using API","FAILURE","2021-02-12T12:22:51.591+01:00[Europe/Berlin]","0.0","6.57"
+"User - Operations about users - Login & Logout","As a End User, A Valid user with wrong password can not login to the application using API","FAILURE","2021-02-12T12:22:58.169+01:00[Europe/Berlin]","0.0","1.03"
+"User - Operations about users - Login & Logout","As a End User, A Unauthorized user with valid password can not login to the application using API","FAILURE","2021-02-12T12:22:59.205+01:00[Europe/Berlin]","0.0","1.08"
+"User - Operations about users - Login & Logout","As a End User, A Valid user can login and logout to the application using API","SUCCESS","2021-02-12T12:23:00.284+01:00[Europe/Berlin]","0.0","2.07"
