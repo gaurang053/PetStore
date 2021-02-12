@@ -3,7 +3,11 @@ Feature: User - Operations about users
 	As a Admin User, I can create new user, view or update existing user information and delete the user
 
 	Scenario Outline: As a Admin User, I can create new user, view, update, delete the existing user
-    Given I provide login information "<userData>" 
+    Given I provide below login information
+    
+    | id | userName | firstname | lastname | email						  |password				| phoneNumber | userStatus |
+    | 20 | testuser | firstname | lastname | testuser@gmail.com |test123				| 123456789   | 0					 |
+    
     When I send request to crete user
     Then Create user is successful
     And Allow to fetch the user details by "<userName>" 
@@ -15,5 +19,5 @@ Feature: User - Operations about users
     And Delete the user with username "<userName>"
   
   Examples: Valid
-  			|userData|firstname|lastname|email|changepassword|phoneNumber|userName|
-		  	|20,testuser,firstname,lastname,testuser@gmail.com,test123,123456789,0|pet|store|petstore@gmail.com|test1234|987654321|testuser|
+			|firstname	|lastname	|email								|changepassword	|phoneNumber	|userName	|
+		  |pet				|store		|petstore@gmail.com		|test1234				|987654321		|testuser	|

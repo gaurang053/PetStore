@@ -1,6 +1,8 @@
 package com.serene.tests.features.steps.generic;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.assertj.core.api.SoftAssertions;
 import org.junit.Assert;
@@ -54,10 +56,10 @@ public class LoginAPISteps {
 	}
 
 	@Step
-	public UserInfo createUserClass(List<String> userInfo) {
-		UserInfo newUser = new UserInfo(Integer.parseInt(userInfo.get(0)), userInfo.get(1), userInfo.get(2),
-				userInfo.get(3), userInfo.get(4), userInfo.get(5), userInfo.get(6),
-				Integer.parseInt(userInfo.get(7)));
+	public UserInfo createUserClass(Map<String, String> userInfo) {
+		UserInfo newUser = new UserInfo(Integer.parseInt(userInfo.get("id")), userInfo.get("userName"), userInfo.get("firstname"),
+				userInfo.get("lastname"), userInfo.get("email"), userInfo.get("password"), userInfo.get("phoneNumber"),
+				Integer.parseInt(userInfo.get("userStatus")));
 		return newUser;
 		
 	}

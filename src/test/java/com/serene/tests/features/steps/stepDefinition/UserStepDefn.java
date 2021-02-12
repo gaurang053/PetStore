@@ -1,6 +1,8 @@
 package com.serene.tests.features.steps.stepDefinition;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.assertj.core.api.SoftAssertions;
 import org.junit.runner.RunWith;
@@ -44,15 +46,16 @@ public class UserStepDefn {
 	@Steps
 	LoginAPISteps loginAPI;
 
-	@Given("^I provide login information \"(.*)\"$")
-	public void i_provide_login_information(List<String> userInfo) {
-		newUser = loginAPI.createUserClass(userInfo);
+	@Given("^I provide below login information$")
+	public void i_provide_login_information(List<Map<String, String>> listOfUserInfo) {
+		Map<String, String> mapUserInfo = listOfUserInfo.get(0);
+		this.newUser = loginAPI.createUserClass(mapUserInfo);
 
 	}
 
 	@When("^I send request to crete user$")
 	public void i_send_request_to_crete_user() {
-		res = loginAPI.createAndPostUserRequest(newUser);
+		res = loginAPI.createAndPostUserRequest(this.newUser);
 	}
 
 	@Then("^Create user is successful$")

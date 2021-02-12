@@ -2,6 +2,7 @@ package com.serene.tests.features.steps.stepDefinition;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.assertj.core.api.SoftAssertions;
 import org.junit.runner.RunWith;
@@ -26,10 +27,8 @@ import net.thucydides.core.annotations.Steps;
 public class CreateMultiUserStepDefin {
 	private Response res = null; // Response
 	private RequestSpecification requestSpec = null;
-	private UserInfo user1 = null;
-	private UserInfo user2 = null;
-	private List<UserInfo> userArray = null;
-
+	private List<UserInfo> userList = null;
+	private UserInfo userArray[] = null;
 	
 	private SoftAssertions softAssertion = null;
 	@Before
@@ -47,12 +46,15 @@ public class CreateMultiUserStepDefin {
 	@Steps
 	LoginAPISteps loginAPI;
 
-	@Given("^I provide user information \"([^\"]*)\" and \"([^\"]*)\" to create array$")
-	public void i_provide_user_information_and_to_create_array(List<String>  userData1, List<String>  userData2){
-		user1 = loginAPI.createUserClass(userData1); 
-		user2 = loginAPI.createUserClass(userData2); 
-		UserInfo[] userArray = {user1,user2};
-		APIRequestBuilder apiRequestBuilder = new APIRequestBuilder("/user/createWithArray","application/json",userArray);
+	@Given("^I provide below user information to create array$")
+	public void i_provide_user_information_and_to_create_array(List<Map<String, String>> listOfUserInfo){
+		this.userArray = new UserInfo[listOfUserInfo.size()];
+		this.userList = new ArrayList<UserInfo>();
+		for (Map<String, String> map : listOfUserInfo) {
+			this.userList.add(loginAPI.createUserClass(map));
+		}
+		this.userArray = this.userList.toArray(this.userArray);
+		APIRequestBuilder apiRequestBuilder = new APIRequestBuilder("/user/createWithArray","application/json",this.userArray);
 		this.requestSpec = apiRequestBuilder.getRequestSpecification();
 		this.requestSpec = RestAssured.given().spec(this.requestSpec);
 		
@@ -72,24 +74,24 @@ public class CreateMultiUserStepDefin {
 	
 	@And("^Allow to fetch the list of user details by \"([^\"]*)\"$")
 	public void allow_to_fetch_the_list_of_user_details_by(String userName) throws Exception {
-		UserInfo actualUser = loginAPI.fetchUserInfoByUserName(userName);
-		UserInfo user = this.user1;
-		if("testuser2".equalsIgnoreCase(userName)) {
-			user = this.user2;
-		}else if("testuser3".equalsIgnoreCase(userName)) {
-			user = userArray.get(0);
-		}else if("testuser4".equalsIgnoreCase(userName)) {
-			user = userArray.get(1);;
+		UserInfo actualUserData = loginAPI.fetchUserInfoByUserName(userName);
+		UserInfo expectedUserData = null;
+		for (UserInfo userInfo : this.userList) {
+			if(userName.equals(userInfo.getUsername())) {
+				expectedUserData = userInfo;
+			}
 		}
-		loginAPI.compareUserInfo(softAssertion, user,actualUser);
+		loginAPI.compareUserInfo(softAssertion, expectedUserData,actualUserData);
 	}
 	
-	@Given("^I provide user information \"([^\"]*)\" and \"([^\"]*)\" to create list$")
-	public void i_provide_user_information_and_to_create_list(List<String>  userData1, List<String>  userData2){
-		this.userArray = new ArrayList<>();
-		this.userArray.add(loginAPI.createUserClass(userData1));
-		this.userArray.add(loginAPI.createUserClass(userData2));
-		APIRequestBuilder apiRequestBuilder = new APIRequestBuilder("/user/createWithArray","application/json",this.userArray);
+	@Given("^I provide below user information to create list$")
+	public void i_provide_user_information_and_to_create_list(List<Map<String, String>> listOfUserInfo){
+		this.userList = new ArrayList<UserInfo>();
+		for (Map<String, String> map : listOfUserInfo) {
+			this.userList.add(loginAPI.createUserClass(map));
+		}
+		
+		APIRequestBuilder apiRequestBuilder = new APIRequestBuilder("/user/createWithArray","application/json",this.userList);
 		this.requestSpec = apiRequestBuilder.getRequestSpecification();
 		this.requestSpec = RestAssured.given().spec(this.requestSpec);
 	}
