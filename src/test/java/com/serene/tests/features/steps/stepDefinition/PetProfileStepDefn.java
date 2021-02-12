@@ -1,6 +1,7 @@
 package com.serene.tests.features.steps.stepDefinition;
 
 import java.util.List;
+import java.util.Map;
 
 import org.assertj.core.api.SoftAssertions;
 import org.junit.Assert;
@@ -43,9 +44,10 @@ public class PetProfileStepDefn {
 	@Steps
 	PetAPISteps petAPISteps;
 
-	@Given("^As a owner I would add new pet \"([^\"]*)\" to the store with url \"([^\"]*)\"$")
-	public void as_a_owner_I_would_add_new_pet_to_the_store_with_url(List<String> petData, String url) {
-		PetProfileStepDefn.petUrl = url;
+	@Given("^As a owner, I would add new pet to the store with the below data$")
+	public void as_a_owner_I_would_add_new_pet_to_the_store_with_url(List<Map<String, String>> listOfData) {
+		Map<String, String> petData = listOfData.get(0);
+		PetProfileStepDefn.petUrl = petData.get("url");
 		this.petInfo = petAPISteps.createPetClass(petData);
 		this.res = petAPISteps.createPetRequest(PetProfileStepDefn.petUrl, this.petInfo);
 		PetInfo petResponse = petAPISteps.validatePetInfoIsAdded(this.res);
@@ -76,14 +78,16 @@ public class PetProfileStepDefn {
 		Assert.assertEquals("Message return id", petId, expectedResponse.getMessage());
 	}
 
-	@Given("^As a Shop owner, I can create new pet \"([^\"]*)\" profile information$")
-	public void as_a_Shop_owner_I_can_create_new_pet_profile_using_form_data(List<String> petData) {
+	@Given("^As a Shop owner, I can create new pet profile information amd validate$")
+	public void as_a_Shop_owner_I_can_create_new_pet_profile_using_form_data(List<Map<String, String>> listOfData) {
+		Map<String, String> petData = listOfData.get(0);
 		this.petInfo = petAPISteps.createPetClass(petData);
 		this.res = petAPISteps.createPetRequest(PetProfileStepDefn.petUrl, this.petInfo);
 	}
 
-	@When("^Once, the profile created, I can update the Pet data \"([^\"]*)\" and Validate$")
-	public void once_the_profile_created_I_can_update_the_Pet_data_and_Validate(List<String> petDataToBeUpdated) {
+	@When("^Once, the profile created, I can update the Pet info with below data and Validate$")
+	public void once_the_profile_created_I_can_update_the_Pet_data_and_Validate(List<Map<String, String>> listOfData) {
+		Map<String, String> petDataToBeUpdated = listOfData.get(0);
 		PetInfo toBeUpdated = petAPISteps.createPetClass(petDataToBeUpdated);
 		PetInfo actualResponse = petAPISteps.updatePetRequest(PetProfileStepDefn.petUrl, toBeUpdated);
 		petAPISteps.comparePetInfo(softAssertion, toBeUpdated, actualResponse);

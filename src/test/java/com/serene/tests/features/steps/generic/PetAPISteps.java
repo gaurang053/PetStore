@@ -2,6 +2,7 @@ package com.serene.tests.features.steps.generic;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.assertj.core.api.SoftAssertions;
 import org.junit.Assert;
@@ -18,15 +19,14 @@ import net.thucydides.core.annotations.Step;
 
 public class PetAPISteps {
 
-	public PetInfo createPetClass(List<String> petData) {
-		Category category = new Category(Integer.parseInt(petData.get(1)),petData.get(2));
-		
+	public PetInfo createPetClass(Map<String, String> petData) {
+		Category category = new Category(Integer.parseInt(petData.get("categoryId")),petData.get("categoryName"));
 		List<String> photoUrls = new ArrayList<>();
-		photoUrls.add(petData.get(4));
+		photoUrls.add(petData.get("photoUrls"));
 		List<Tag> tags = new ArrayList<>();
-		Tag tagData = new Tag(Integer.parseInt(petData.get(5)),petData.get(6));
+		Tag tagData = new Tag(Integer.parseInt(petData.get("tagsId")),petData.get("tagsName"));
 		tags.add(tagData);
-		PetInfo petInfo = new PetInfo(Integer.parseInt(petData.get(0)),category,petData.get(3),photoUrls,tags,petData.get(7));
+		PetInfo petInfo = new PetInfo(Integer.parseInt(petData.get("petId")),category,petData.get("petName"),photoUrls,tags,petData.get("status"));
 		return petInfo;
 	}
 
