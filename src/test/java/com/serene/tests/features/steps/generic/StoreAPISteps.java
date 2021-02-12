@@ -2,6 +2,7 @@ package com.serene.tests.features.steps.generic;
 
 import java.text.ParseException;
 import java.util.List;
+import java.util.Map;
 
 import org.assertj.core.api.SoftAssertions;
 import org.junit.Assert;
@@ -18,10 +19,10 @@ import net.thucydides.core.annotations.Step;
 public class StoreAPISteps {
 
 	@Step
-	public StoreInfo createStoreClass(List<String> strStoreData) {
-		StoreInfo storeInfo = new StoreInfo(Integer.parseInt(strStoreData.get(0)),
-				Integer.parseInt(strStoreData.get(1)), Integer.parseInt(strStoreData.get(2)), strStoreData.get(3),
-				strStoreData.get(4), Boolean.parseBoolean(strStoreData.get(5)));
+	public StoreInfo createStoreClass(Map<String,String> strStoreData) {
+		StoreInfo storeInfo = new StoreInfo(Integer.parseInt(strStoreData.get("orderId")),
+				Integer.parseInt(strStoreData.get("petId")), Integer.parseInt(strStoreData.get("quantity")), strStoreData.get("shipdate"),
+				strStoreData.get("status"), Boolean.parseBoolean(strStoreData.get("complete")));
 		return storeInfo;
 	}
 

@@ -1,6 +1,7 @@
 package com.serene.tests.features.steps.stepDefinition;
 
 import java.util.List;
+import java.util.Map;
 
 import org.assertj.core.api.SoftAssertions;
 import org.junit.Assert;
@@ -43,12 +44,13 @@ public class StoreStepDefn {
 	@Steps
 	StoreAPISteps storeAPISteps;
 	
-	@Given("^I would like to place an order for a  pet \"([^\"]*)\" with order url \"([^\"]*)\"$")
-	public void i_would_like_to_place_an_order_for_a_pet(List<String> storeData,String url) {
-		StoreStepDefn.storeUrl = url;
+	@Given("^I would like to place an order for a  pet$")
+	public void i_would_like_to_place_an_order_for_a_pet(List<Map<String, String>> listOfData) {
+		Map<String,String> map = listOfData.get(0);
+		StoreStepDefn.storeUrl = map.get("url");
 		//load list string value into class
-		this.storeInfo = storeAPISteps.createStoreClass(storeData);
-		this.res=storeAPISteps.createOrderRequest(url, this.storeInfo);
+		this.storeInfo = storeAPISteps.createStoreClass(map);
+		this.res=storeAPISteps.createOrderRequest(StoreStepDefn.storeUrl, this.storeInfo);
 		StoreInfo actualResponse = storeAPISteps.validatePostStatusAndReturnResponse(this.res);
 		storeAPISteps.compareStoreInfo(this.softAssertion, this.storeInfo, actualResponse);
 		
