@@ -1,6 +1,6 @@
 Feature: Store - Access to Petstore order
 
-	Store - Access to Petstore order 
+	Store - CRUD with Petstore order 
 
 	Scenario Outline:  As a End User, I can control Pet Order Cart
     Given I would like to place an order for a  pet
