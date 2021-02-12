@@ -1,7 +1,6 @@
 package com.serene.tests.features.steps.generic;
 
 import java.text.ParseException;
-import java.util.List;
 import java.util.Map;
 
 import org.assertj.core.api.SoftAssertions;
@@ -11,6 +10,7 @@ import com.ibm.icu.text.DateFormat;
 import com.ibm.icu.text.SimpleDateFormat;
 import com.ibm.icu.util.TimeZone;
 import com.serene.tests.features.pojo.store.StoreInfo;
+
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;

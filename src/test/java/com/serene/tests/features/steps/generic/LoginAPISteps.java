@@ -1,20 +1,17 @@
 package com.serene.tests.features.steps.generic;
 
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import org.assertj.core.api.SoftAssertions;
 import org.junit.Assert;
 
-import com.serene.tests.features.pojo.users.UserInfo;
 import com.serene.tests.features.pojo.users.UserAPIResponse;
+import com.serene.tests.features.pojo.users.UserInfo;
 
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
-import net.thucydides.core.annotations.Reported;
 import net.thucydides.core.annotations.Step;
 
 public class LoginAPISteps {

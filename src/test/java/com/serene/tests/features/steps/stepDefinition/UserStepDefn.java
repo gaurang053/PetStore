@@ -1,6 +1,5 @@
 package com.serene.tests.features.steps.stepDefinition;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
