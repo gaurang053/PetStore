@@ -75,8 +75,8 @@ public class StoreStepDefn {
 
 
 	@When("^Request should submit and Positive API response should received \"([^\"]*)\"$")
-	public void request_should_submit_and_Positive_API_response_should_received(String arg1) throws Exception {
-		Assert.assertEquals("Status Check Passed!", 200, this.res.getStatusCode());
+	public void request_should_submit_and_Positive_API_response_should_received(String response) throws Exception {
+			Assert.assertEquals("Status Check Passed!", response, this.res.getStatusCode()+"");
 	}
 
 	@Then("^Inventory data should display$")
