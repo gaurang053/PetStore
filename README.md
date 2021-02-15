@@ -164,8 +164,30 @@ src
 ![Test Report](TestReport.png)
 
 # How to configure Job in Git Runner. 
+
 Refer#https://gitlab.com/gaurang053/petStore/-/pipelines/256528174/test_report
 
+Below is the sample of test.gitlab-ci.yml file which is configured with CI pipeline for building and executing maven project
+```
+#Select image
+image: maven:3.3.9-jdk-8
+
+#Define deployment steps (As we are just executing the job hence only one stage is required)
+stages:
+  - test
+
+#Test steps
+test:
+  stage: test
+  allow_failure: true
+  script:
+    - 'mvn clean verify'  #Build and Execute maven project 
+  only:
+    - master
+  artifacts:
+    reports: #publish test report
+      junit: /builds/gaurang053/petStore/target/site/reports/SERENITY-JUNIT-*.xml
+```
 ![Git Runner CI Job](GitRunnerCIPipeline.png)
 
 
