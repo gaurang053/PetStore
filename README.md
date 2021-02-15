@@ -165,6 +165,10 @@ src
 
 # How to configure Job in Git Runner. 
 Refer#https://gitlab.com/gaurang053/petStore/-/pipelines/256528174/test_report
+
 ![Git Runner CI Job] (GitRunnerCIPipeline.png)
+
+
+
 
 
